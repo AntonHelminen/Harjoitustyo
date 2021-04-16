@@ -6,8 +6,6 @@ public class User {
     private String user_name;
     private Person person;
     public static User getInstance() {
-        System.out.println("ha");
         return user;
-
     }
 }
