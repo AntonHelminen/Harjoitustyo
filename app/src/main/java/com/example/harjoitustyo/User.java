@@ -1,9 +1,8 @@
 package com.example.harjoitustyo;
 
+// User is a
 public class User {
     private static User user = new User();
-    private String id;
-    private String user_name;
     private Person person;
     public static User getInstance() {
         return user;
