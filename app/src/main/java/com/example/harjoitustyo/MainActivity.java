@@ -41,7 +41,19 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int id = item.getItemId();
-                if (id == R.id.nav_settings) {
+                if (id == R.id.nav_home) {
+                    fragment = new Fragment1();
+                }
+                else if (id == R.id.nav_add_data) {
+                    fragment = new Fragment1();
+                }
+                else if (id == R.id.nav_view_data) {
+                    fragment = new Fragment1();
+                }
+                else if (id == R.id.nav_help) {
+                    fragment = new Fragment1();
+                }
+                else if (id == R.id.nav_logout) {
                     fragment = new Fragment1();
                 }
                 FragmentManager manager = getSupportFragmentManager();
