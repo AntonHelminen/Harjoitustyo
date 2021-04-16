@@ -60,7 +60,12 @@ public class DataFile_manager {
             Log.e("IOException", "Error in input");
         }
     }
+    //Get HashMap from DataFile-Manager
     public HashMap getPeopleMap() {
         return people_write;
+    }
+    //Used to update HashMap-status
+    public void update() {
+        people_read = person_manager.getPeopleMap();
     }
 }

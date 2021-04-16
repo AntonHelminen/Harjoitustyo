@@ -46,7 +46,11 @@ public class Person_manager {
             System.out.println("Person removed!");
         }
     }
+    //Get HashMap from Person_manager
     public HashMap getPeopleMap() {
         return people;
+    }
+    public void update() {
+        people = dataFile_manager.getPeopleMap();
     }
 }
