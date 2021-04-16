@@ -13,11 +13,36 @@ public class Person_manager {
     public void addPerson(String username, String name, String password, int age) {
         Person person = new Person(username, name, password, age);
         people.put(password, person);
+        System.out.println("Person added!");
     }
-    //Person finder by password and username
+    //Person getter by password and username returns (person) or (null)
     public Person getPerson(String password, String username) {
-        Person person;
-        person = people.get(password);
-        return person;
+        if(findPerson(password, username)) {
+            Person person = people.get(password);
+            System.out.println("Person got!");
+            return person;
+        }
+        return null;
+    }
+    //person finder by password and username, returns (true) or (false) boolean value
+    public boolean findPerson(String password, String username) {
+        Person person = people.get(password);
+        if (person == null) {
+            return false;
+        }
+        else {
+            if (person.getUsername().equals(username)) {
+                System.out.println("Person found!");
+                return true;
+            }
+        }
+        return false;
+    }
+    //Removes a specific person
+    public void removePerson(String password, String username) {
+        if(findPerson(password, username)) {
+            people.remove(password);
+            System.out.println("Person removed!");
+        }
     }
 }
