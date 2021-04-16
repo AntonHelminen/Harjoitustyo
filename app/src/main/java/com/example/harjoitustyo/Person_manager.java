@@ -3,8 +3,9 @@ package com.example.harjoitustyo;
 import java.util.HashMap;
 
 public class Person_manager {
+    private DataFile_manager dataFile_manager = DataFile_manager.getInstance();
     private static Person_manager manager = new Person_manager();
-    HashMap<String, Person> people = new HashMap();
+    private HashMap<String, Person> people = dataFile_manager.getPeopleMap();
 
     public static Person_manager getInstance() {
         return manager;
@@ -44,5 +45,8 @@ public class Person_manager {
             people.remove(password);
             System.out.println("Person removed!");
         }
+    }
+    public HashMap getPeopleMap() {
+        return people;
     }
 }
