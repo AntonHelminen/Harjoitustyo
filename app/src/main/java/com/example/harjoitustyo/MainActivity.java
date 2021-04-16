@@ -42,19 +42,19 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int id = item.getItemId();
                 if (id == R.id.nav_home) {
-                    fragment = new Fragment1();
+                    fragment = new HomeFragment();
                 }
                 else if (id == R.id.nav_add_data) {
-                    fragment = new Fragment1();
+                    fragment = new AddDataFragment();
                 }
                 else if (id == R.id.nav_view_data) {
-                    fragment = new Fragment1();
+                    fragment = new ViewDataFragment();
                 }
                 else if (id == R.id.nav_help) {
-                    fragment = new Fragment1();
+                    fragment = new HelpFragment();
                 }
                 else if (id == R.id.nav_logout) {
-                    fragment = new Fragment1();
+                    fragment = new HomeFragment();
                 }
                 FragmentManager manager = getSupportFragmentManager();
                 FragmentTransaction transaction = manager.beginTransaction();
