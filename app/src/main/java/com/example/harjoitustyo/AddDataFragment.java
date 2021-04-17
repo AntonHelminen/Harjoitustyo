@@ -20,7 +20,6 @@ public class AddDataFragment extends Fragment implements AdapterView.OnItemSelec
     Button button;
     ScrollView scrollview, scrollview2, scrollview3, scrollview4, scrollview5, scrollview6, scrollview7, scrollview8, scrollview9;
     Spinner spinner, spinner2, spinner3, spinner4, spinner5, spinner6, spinner7, spinner8, spinner9;
-    double  result;
 
     @Nullable
     @Override
@@ -101,7 +100,7 @@ public class AddDataFragment extends Fragment implements AdapterView.OnItemSelec
             @Override
             public void onClick(View v) {
 
-                API_reader api_reader = new API_reader().getInstance();
+                API_reader api_reader = API_reader.getInstance();
 
                 /* Setting values */
                 api_reader.setBioWaste(spinner.getSelectedItem().toString());
@@ -114,7 +113,7 @@ public class AddDataFragment extends Fragment implements AdapterView.OnItemSelec
                 api_reader.setPlastic(spinner8.getSelectedItem().toString());
                 api_reader.setEstimate(spinner9.getSelectedItem().toString());
 
-                result = api_reader.calculate();
+                api_reader.calculate();
 
                 FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.fragmentWindow, new ViewDataFragment());
