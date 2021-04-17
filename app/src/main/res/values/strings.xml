@@ -9,4 +9,19 @@
     <string name="help">Help</string>
     <string name="view_data">View data</string>
     <string name="add_data">Add data</string>
+    <string name="biowaste">Biowaste</string>
+    <string name="carton">Carton</string>
+    <string name="electronic">Electronic</string>
+    <string name="glass">Glass</string>
+    <string name="hazardous">Hazardous</string>
+    <string name="metal">Metal</string>
+    <string name="paper">Paper</string>
+    <string name="plastic">Plastic</string>
+    <string name="amount">Amount</string>
+    <string-array name="Choice">
+        <item>never</item>
+        <item>sometimes</item>
+        <item>often</item>
+        <item>always</item>
+    </string-array>
 </resources>
