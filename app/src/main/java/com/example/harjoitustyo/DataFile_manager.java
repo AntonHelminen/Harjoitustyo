@@ -36,7 +36,7 @@ public class DataFile_manager {
             Log.e("IOException", "Error in input");
         }
     }
-    //When given context, reads all people's data from a txt file.
+    //When given context, reads all people's data from a txt file and puts it in a HashMap
     public void readFile(Context context) {
         try {
             InputStream in = context.openFileInput("Data_file.txt");

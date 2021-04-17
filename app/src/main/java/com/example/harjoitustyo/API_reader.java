@@ -1,5 +1,7 @@
 package com.example.harjoitustyo;
 
+import android.os.StrictMode;
+
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -76,6 +78,9 @@ public class API_reader {
         return result;
     }
     public String getJSON() {
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+
         String response = null;
         String Url = "https://ilmastodieetti.ymparisto.fi/ilmastodieetti/calculatorapi/v1/WasteCalculator?query.bioWaste=" + bioWaste + "&query.carton=" + carton + "&query.electronic=" + electronic + "&query.glass=" + glass + "&query.hazardous=" + hazardous + "&query.metal=" + metal + "&query.paper=" + paper + "&query.plastic=" + plastic + "&query.amountEstimate=" + estimate;
         System.out.println(Url);
