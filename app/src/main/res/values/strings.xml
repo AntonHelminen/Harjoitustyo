@@ -20,6 +20,7 @@
     <string name="amount">Amount</string>
     <string name="waste_type">Waste type</string>
     <string name="frequency">Frequency</string>
+    <string name="calculate">Calculate</string>
     <string-array name="Choice">
         <item>never</item>
         <item>sometimes</item>
