@@ -1,6 +1,8 @@
 package com.example.harjoitustyo;
 
 
+import android.content.Intent;
+
 import java.util.regex.Pattern;
 
 class Login_Manager {
@@ -84,14 +86,14 @@ class Login_Manager {
 
 
     }
-    // login command
-    public void login(String password, String username) {
+    // login checker
+    public boolean login(String password, String username) {
         if (find_person(password, username)) {
             user.setPerson(person);
-            //swap to mainActivity
+            return true;
         }
         else {
-            //swap to signUpActivity
+            return false;
         }
     }
 }

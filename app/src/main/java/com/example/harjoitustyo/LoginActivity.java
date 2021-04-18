@@ -12,6 +12,7 @@ public class LoginActivity extends AppCompatActivity {
 
     TextView username;
     TextView password;
+    TextView Errors;
     private Button SignUp;
     private Button LogIn;
     Login_Manager login_manager = Login_Manager.getInstance();
@@ -20,6 +21,12 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        username = (TextView) findViewById(R.id.input_username);
+        password = (TextView) findViewById(R.id.input_password);
+        Errors = (TextView) findViewById(R.id.ErrorField);
+
+        //Button actions
         SignUp = (Button) findViewById(R.id.SignUp_button);
         SignUp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,6 +49,13 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void Login() {
-
+        Intent intent = new Intent(this, MainActivity.class);
+        Boolean worked = login_manager.login(username.getText().toString(), password.getText().toString());
+        if (worked) {
+            startActivity(intent);
+        }
+        else {
+            Errors.setText("Wrong username or password. Sign up if you haven't created an account yet.");
+        }
     }
 }
