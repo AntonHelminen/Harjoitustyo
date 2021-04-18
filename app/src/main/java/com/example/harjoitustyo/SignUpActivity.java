@@ -73,7 +73,7 @@ public class SignUpActivity extends AppCompatActivity {
             return;
         }
         /* If none of them is empty */
-        loginManager.createPerson(editUsername.toString(), editPassword.toString(), editName.toString(), Integer.valueOf(editAge.toString()));
+        loginManager.createPerson(editUsername.getText().toString(), editPassword.getText().toString(), editName.getText().toString(), Integer.valueOf(editAge.getText().toString()));
         notification = "Welcome!";
         Toast.makeText(this, notification, Toast.LENGTH_SHORT).show();
     }
