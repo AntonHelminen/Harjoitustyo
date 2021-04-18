@@ -11,9 +11,8 @@ public class Person_manager {
         return manager;
     }
     //Add a person to the list
-    public void addPerson(String username, String name, String password, int age) {
-        Person person = new Person(username, name, password, age);
-        people.put(password, person);
+    public void addPerson(Person person) {
+        people.put(person.getPassword(), person);
         System.out.println("Person added!");
     }
     //Person getter by password and username returns (person) or (null)

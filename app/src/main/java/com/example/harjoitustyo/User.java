@@ -7,4 +7,11 @@ public class User {
     public static User getInstance() {
         return user;
     }
+    public void setPerson(Person persona) {
+        person = persona;
+    }
+    public Person getPerson() {
+        return person;
+    }
 }
+
