@@ -4,11 +4,11 @@ package com.example.harjoitustyo;
 import java.util.regex.Pattern;
 
 class Login_Manager {
-    private Login_Manager login_checker = new Login_Manager();
+    private static Login_Manager login_checker = new Login_Manager();
     private Person_manager person_manager = Person_manager.getInstance();
     private Person person;
     private User user = User.getInstance();
-    public Login_Manager InstanceOf() {
+    public static Login_Manager getInstance() {
         return login_checker;
     }
     // Used for checking if a person is on the created list
@@ -20,7 +20,6 @@ class Login_Manager {
         return false;
     }
     // used for creating a new person in SignUpActivity
-    //Link to website https://stackoverflow.com/questions/1795402/check-if-a-string-contains-a-special-character
     public boolean createPerson(String username, String password, String name, int age) {
         Boolean hasdigit = false;
         Boolean hasUpper = false;
