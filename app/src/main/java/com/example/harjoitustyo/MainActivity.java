@@ -9,6 +9,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.EditText;
@@ -54,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
                     fragment = new HelpFragment();
                 }
                 else if (id == R.id.nav_logout) {
-                    fragment = new HomeFragment();
+                    logout();
                 }
                 FragmentManager manager = getSupportFragmentManager();
                 FragmentTransaction transaction = manager.beginTransaction();
@@ -73,5 +74,10 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+    public void logout() {
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+
     }
 }
