@@ -1,5 +1,6 @@
 package com.example.harjoitustyo;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -25,13 +26,58 @@ public class SignUpActivity extends AppCompatActivity {
         editConfirm = (EditText) findViewById(R.id.edit_confirm);
 
     }
+    /* Validating inputs */
+    private boolean validateName()  {
+        String nameInput = editName.getText().toString();
+
+        if (nameInput.isEmpty())    {
+            editName.setError("Field can't be empty!");
+            return false;
+        }
+        else    {
+            editName.setError(null);
+            return true;
+        }
+    }
+
+    private boolean validateAge()  {
+        String ageInput = editAge.getText().toString();
+
+        if (ageInput.isEmpty())    {
+            editAge.setError("Field can't be empty!");
+            return false;
+        }
+        else    {
+            editAge.setError(null);
+            return true;
+        }
+    }
+
+    private boolean validateUsername()  {
+        String usernameInput = editUsername.getText().toString();
+
+        if (usernameInput.isEmpty())    {
+            editUsername.setError("Field can't be empty!");
+            return false;
+        }
+        else    {
+            editUsername.setError(null);
+            return true;
+        }
+    }
 
     public void SignUp(View v)  {
+        /* Checking inputs */
+        if (!validateName() | !validateAge() | !validateUsername())   {
+            return;
+        }
+        /* If none of them is empty */
         notification = "Welcome!";
-        Toast.makeText(SignUpActivity.this, notification, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, notification, Toast.LENGTH_SHORT).show();
     }
 
     public void GoBack(View v)  {
-
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
     }
 }
