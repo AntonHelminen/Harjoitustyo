@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else if (id == R.id.nav_logout) {
                     logout();
+                    resume = false;
                     finish();
                 }
                 if (resume) {
