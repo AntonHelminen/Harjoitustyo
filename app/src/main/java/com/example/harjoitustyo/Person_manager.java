@@ -3,8 +3,8 @@ package com.example.harjoitustyo;
 import java.util.HashMap;
 
 public class Person_manager {
-    private DataFile_manager dataFile_manager = DataFile_manager.getInstance();
     private static Person_manager manager = new Person_manager();
+    private DataFile_manager dataFile_manager = DataFile_manager.getInstance();
     private HashMap<String, Person> people = dataFile_manager.getPeopleMap();
 
     public static Person_manager getInstance() {

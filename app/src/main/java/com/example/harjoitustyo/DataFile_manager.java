@@ -15,8 +15,8 @@ import java.util.HashMap;
 import javax.crypto.Cipher;
 
 public class DataFile_manager {
-    private Person_manager person_manager = Person_manager.getInstance();
     private static DataFile_manager df_manager = new DataFile_manager();
+    private Person_manager person_manager = Person_manager.getInstance();
     private HashMap<String, Person> people_write = new HashMap<>();
     private HashMap<String, Person> people_read = person_manager.getPeopleMap();
     public static DataFile_manager getInstance() {
