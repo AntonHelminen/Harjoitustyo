@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                Boolean resume  = true;
                 int id = item.getItemId();
                 if (id == R.id.nav_home) {
                     fragment = new HomeFragment();
@@ -56,11 +57,15 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else if (id == R.id.nav_logout) {
                     logout();
+                    finish();
                 }
-                FragmentManager manager = getSupportFragmentManager();
-                FragmentTransaction transaction = manager.beginTransaction();
-                transaction.replace(R.id.fragmentWindow, fragment);
-                transaction.commit();
+                if (resume) {
+                    FragmentManager manager = getSupportFragmentManager();
+                    FragmentTransaction transaction = manager.beginTransaction();
+                    transaction.replace(R.id.fragmentWindow, fragment);
+                    transaction.commit();
+                }
+
                 return false;
             }
         });
