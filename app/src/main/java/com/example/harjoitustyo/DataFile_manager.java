@@ -16,14 +16,15 @@ import javax.crypto.Cipher;
 
 public class DataFile_manager {
     private static DataFile_manager df_manager = new DataFile_manager();
-    private Person_manager person_manager = Person_manager.getInstance();
     private HashMap<String, Person> people_write = new HashMap<>();
-    private HashMap<String, Person> people_read = person_manager.getPeopleMap();
+
     public static DataFile_manager getInstance() {
         return df_manager;
     }
     //When given context, writes all people's data to a txt file.
     public void writeFile(Context context) {
+        Person_manager person_manager = Person_manager.getInstance();
+        HashMap<String, Person> people_read = person_manager.getPeopleMap();
         try {
             OutputStreamWriter osw = new OutputStreamWriter(context.openFileOutput("Data_file.txt", Context.MODE_PRIVATE));
             for (String key : people_read.keySet()){
@@ -64,8 +65,5 @@ public class DataFile_manager {
     public HashMap getPeopleMap() {
         return people_write;
     }
-    //Used to update HashMap-status
-    public void update() {
-        people_read = person_manager.getPeopleMap();
-    }
+
 }
