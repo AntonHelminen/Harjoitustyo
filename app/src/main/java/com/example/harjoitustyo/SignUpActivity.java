@@ -67,11 +67,13 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     public void SignUp(View v)  {
+        Login_Manager loginManager = Login_Manager.getInstance();
         /* Checking inputs */
         if (!validateName() | !validateAge() | !validateUsername())   {
             return;
         }
         /* If none of them is empty */
+        loginManager.createPerson(editUsername.toString(), editPassword.toString(), editName.toString(), Integer.valueOf(editAge.toString()));
         notification = "Welcome!";
         Toast.makeText(this, notification, Toast.LENGTH_SHORT).show();
     }
