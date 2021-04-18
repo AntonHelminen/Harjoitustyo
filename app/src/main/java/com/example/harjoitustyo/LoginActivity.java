@@ -15,6 +15,7 @@ public class LoginActivity extends AppCompatActivity {
     TextView Errors;
     private Button SignUp;
     private Button LogIn;
+    private Button Bypass;
     Login_Manager login_manager = Login_Manager.getInstance();
 
     @Override
@@ -41,6 +42,13 @@ public class LoginActivity extends AppCompatActivity {
                 Login();
             }
         });
+        Bypass = (Button) findViewById(R.id.Bypass);
+        Bypass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                BypassAll();
+            }
+        });
 
 
     }
@@ -57,5 +65,9 @@ public class LoginActivity extends AppCompatActivity {
         else {
             Errors.setText("Wrong username or password. Sign up if you haven't created an account yet.");
         }
+    }
+    public void BypassAll() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }
