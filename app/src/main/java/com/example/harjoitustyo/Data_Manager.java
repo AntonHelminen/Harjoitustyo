@@ -13,6 +13,7 @@ public class Data_Manager {
     public static Data_Manager getInstance() {
         return data_Manager;
     }
+    //Finds the least commonly sorted waste type
     public String least_sorted_waste() {
         String result = "";
         int least_sorted_value = 3;
@@ -33,6 +34,7 @@ public class Data_Manager {
         }
         return result;
     }
+    //Finds the most commonly sorted waste type
     public String most_sorted_waste() {
         String result = "";
         int most_sorted_value = 0;
@@ -82,6 +84,7 @@ public class Data_Manager {
         }
         return result;
     }
+    //Finds the waste type with biggest impact on the person's carbon trace.
     public String worst_waste_type(Person person) {
         String result = "";
         Double worst_amount = 0.0;
@@ -96,6 +99,7 @@ public class Data_Manager {
         }
         return result;
     }
+    //Reads a person's waste recycling habits and calculates the weight of every habit.
     public HashMap<String, Double> carbon_trace_per_waste_type(Person person) {
         Double[] info = evaluator();
         String habit;
@@ -111,6 +115,7 @@ public class Data_Manager {
         }
         return results;
     }
+    //Absolute unit
     public Double[] evaluator() {
         API_reader reader = API_reader.getInstance();
         Double[] results = new Double[9];
