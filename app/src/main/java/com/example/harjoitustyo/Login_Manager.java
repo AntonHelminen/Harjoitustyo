@@ -49,9 +49,11 @@ class Login_Manager {
 
         }
         if (hasdigit && hasUpper && hasLower && hasSpecial && is_long_enough) {
+            System.out.println(username + password + name + age);
             person = new Person(username, password, name, age);
             person_manager.addPerson(person);
             System.out.println("Account created");
+            System.out.println(person_manager.getPerson(password, username).getUsername());
             return true;
         }
         else {
@@ -88,7 +90,8 @@ class Login_Manager {
     }
     // login checker
     public boolean login(String password, String username) {
-        if (find_person(password, username)) {
+        System.out.println(password + username);
+        if (person_manager.findPerson(password, username)) {
             user.setPerson(person);
             return true;
         }

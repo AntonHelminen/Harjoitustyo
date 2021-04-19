@@ -58,7 +58,7 @@ public class LoginActivity extends AppCompatActivity {
     }
     public void Login() {
         Intent intent = new Intent(this, MainActivity.class);
-        Boolean worked = login_manager.login(username.getText().toString(), password.getText().toString());
+        Boolean worked = login_manager.login(password.getText().toString(), username.getText().toString());
         if (worked) {
             startActivity(intent);
         }
