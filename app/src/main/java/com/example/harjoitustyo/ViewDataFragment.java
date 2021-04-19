@@ -1,5 +1,6 @@
 package com.example.harjoitustyo;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 public class ViewDataFragment extends Fragment {
@@ -28,5 +30,20 @@ public class ViewDataFragment extends Fragment {
 
         text = (TextView) getView().findViewById(R.id.textView_result);
         text.setText(String.format("%.3f", api_reader.getResult()));
+
+        getView().findViewById(R.id.buttonBarChart).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), BarChartActivity.class));
+            }
+        });
+
+        getView().findViewById(R.id.buttonPieChart).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), PieChartActivity.class));
+            }
+        });
+
     }
 }

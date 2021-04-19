@@ -30,6 +30,9 @@
     <string name="sign_up2">Sign up</string>
     <string name="go_back">Go back</string>
     <string name="navigation_header">Navigation header</string>
+    <string name="pie_chart">Pie Chart</string>
+    <string name="bar_chart">Bar Chart</string>
+    <string name="radar_chart">Radar Chart</string>
     <string-array name="Choice">
         <item>never</item>
         <item>sometimes</item>
