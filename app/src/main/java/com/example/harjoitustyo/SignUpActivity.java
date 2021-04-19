@@ -66,10 +66,24 @@ public class SignUpActivity extends AppCompatActivity {
         }
     }
 
+    private boolean validatePassword()  {
+        String passwordInput = editPassword.getText().toString();
+        String confirmInput = editConfirm.getText().toString();
+
+        if (!(passwordInput.equals(confirmInput)))    {
+            editPassword.setError("Passwords do not match!");
+            return false;
+        }
+        else    {
+            editUsername.setError(null);
+            return true;
+        }
+    }
+
     public void SignUp(View v)  {
         Login_Manager loginManager = Login_Manager.getInstance();
         /* Checking inputs */
-        if (!validateName() | !validateAge() | !validateUsername())   {
+        if (!validateName() | !validateAge() | !validateUsername() | !validatePassword())   {
             return;
         }
         /* If none of them is empty */
