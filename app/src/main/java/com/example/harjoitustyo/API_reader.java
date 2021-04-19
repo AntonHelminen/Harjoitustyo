@@ -21,9 +21,11 @@ import java.net.URL;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-
+/*Reads an API with granted parameters
+Is Singleton*/
 public class API_reader {
     private static API_reader api_reader= new API_reader();
+    User user = User.getInstance();
     //Variables for calculating
     private String bioWaste = "never";
     private String carton = "never";
@@ -75,9 +77,52 @@ public class API_reader {
     public double calculate() {
         String json = getJSON();
         result = Double.valueOf(json);
+
+        user.getPerson().setC02(result);
         return result;
     }
+    //API JSON reader. Returns String of the result value.
     public String getJSON() {
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+
+        //Saving data to current Person;
+        user.getPerson().setBioWaste(bioWaste);
+        user.getPerson().setCarton(carton);
+        user.getPerson().setElectronic(electronic);
+        user.getPerson().setGlass(glass);
+        user.getPerson().setHazardous(hazardous);
+        user.getPerson().setMetal(metal);
+        user.getPerson().setPaper(paper);
+        user.getPerson().setPlastic(plastic);
+        user.getPerson().setEstimate(estimate);
+        user.getPerson().setHabits();
+
+        String response = null;
+        String Url = "https://ilmastodieetti.ymparisto.fi/ilmastodieetti/calculatorapi/v1/WasteCalculator?query.bioWaste=" + bioWaste + "&query.carton=" + carton + "&query.electronic=" + electronic + "&query.glass=" + glass + "&query.hazardous=" + hazardous + "&query.metal=" + metal + "&query.paper=" + paper + "&query.plastic=" + plastic + "&query.amountEstimate=" + estimate;
+        System.out.println(Url);
+        try {
+            URL url = new URL(Url);
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            connection.setRequestMethod("GET");
+            InputStream in = new BufferedInputStream(connection.getInputStream());
+            BufferedReader br = new BufferedReader((new InputStreamReader(in)));
+            StringBuilder sb = new StringBuilder();
+            String line = null;
+            while((line = br.readLine()) != null) {
+                sb.append(line).append("\n");
+            }
+            response = sb.toString();
+            in.close();
+        } catch (MalformedURLException | ProtocolException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return response;
+    }
+    // Better version for doing other calculations
+    public String getJSON2(String bioWaste, String carton, String electronic, String glass, String hazardous, String metal, String paper, String plastic, String estimate) {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
@@ -104,5 +149,6 @@ public class API_reader {
         }
         return response;
     }
+
 
 }

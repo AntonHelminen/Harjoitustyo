@@ -9,7 +9,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.HashMap;
-
+/*Manages all people. User may collect a person from here as well as other classes.
+Is Singleton*/
 public class Person_manager {
     private static Person_manager manager = new Person_manager();
     private HashMap<String, Person> people = new HashMap<>();
@@ -63,7 +64,16 @@ public class Person_manager {
             for (String key : people.keySet()){
                 Person person = people.get(key);
                 String line = person.getUsername() + ";" + person.getPassword() + ";" +  person.getName() + ";" + person.getAge() + ";" + person.getHome_town();
+                int i = 0;
+                String line2 = "";
+                while (i < person.getC02().size()) {
+                    line2 += person.getC02().get(i).toString();
+                    i ++;
+                }
+                String line3 = person.getBioWaste() + ";" + person.getCarton() + ";" + person.getElectronic() + ";" + person.getGlass() + ";" + person.getHazardous() + ";" + person.getMetal() + ";" + person.getPaper() + ";" + person.getPlastic() + ";" + person.getEstimate();
                 osw.write(line);
+                osw.write(line2);
+                osw.write(line3);
             }
         }
         catch (IOException e) {

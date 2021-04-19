@@ -4,7 +4,8 @@ package com.example.harjoitustyo;
 import android.content.Intent;
 
 import java.util.regex.Pattern;
-
+/*Controls login and signup.
+Is Singleton*/
 class Login_Manager {
     private static Login_Manager login_checker = new Login_Manager();
     private Person_manager person_manager = Person_manager.getInstance();
