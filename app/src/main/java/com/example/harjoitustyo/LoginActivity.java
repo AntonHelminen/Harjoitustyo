@@ -11,7 +11,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class LoginActivity extends AppCompatActivity {
 
-    String testPassword = "123456789Aa-";
     TextView username;
     TextView password;
     TextView Errors;
@@ -75,7 +74,6 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
     public void BypassAll() {
-        login_manager.createPerson("asdf", testPassword, "22", 45);
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }

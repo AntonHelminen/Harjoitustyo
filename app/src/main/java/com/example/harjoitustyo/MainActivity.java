@@ -58,9 +58,9 @@ public class MainActivity extends AppCompatActivity {
                     fragment = new HelpFragment();
                 }
                 else if (id == R.id.nav_logout) {
+                    person_manager.writeFile(context);
                     logout();
                     resume = false;
-                    person_manager.writeFile(context);
                     finish();
                 }
                 if (resume) {

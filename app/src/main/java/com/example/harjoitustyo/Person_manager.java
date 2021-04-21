@@ -60,6 +60,11 @@ public class Person_manager {
     // Old DataFile_manager methods
     public void writeFile(Context context) {
         try {
+            User user = User.getInstance();
+            if (!(user.getPerson() == null)) {
+                removePerson(user.getPerson().getPassword(), user.getPerson().getUsername());
+                addPerson(user.getPerson());
+            }
             System.out.println("Toimiib1");
             OutputStreamWriter osw = new OutputStreamWriter(context.openFileOutput("Data_file.txt", Context.MODE_PRIVATE));
             System.out.println("Toimiib2");
@@ -73,7 +78,7 @@ public class Person_manager {
                     line2 += person.getC02().get(i).toString();
                     i ++;
                 }
-                String line3 = person.getBioWaste() + ";" + person.getCarton() + ";" + person.getElectronic() + ";" + person.getGlass() + ";" + person.getHazardous() + ";" + person.getMetal() + ";" + person.getPaper() + ";" + person.getPlastic() + ";" + person.getEstimate();
+                String line3 = person.getBioWaste() + ";" + person.getCarton() + ";" + person.getElectronic() + ";" + person.getGlass() + ";" + person.getHazardous() + ";" + person.getMetal() + ";" + person.getPaper() + ";" + person.getPlastic() + ";" + person.getEstimate() + "\n";
                 osw.write(line);
                 osw.write(line2);
                 osw.write(line3);
