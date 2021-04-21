@@ -104,6 +104,16 @@ public class Person_manager {
                 int age = Integer.valueOf(parts[3]);
                 System.out.println(age);
                 Person person = new Person(username, password, name, age);
+                //These are empty at first reads, so must pay attention to null-pointer errors.
+                person.setBioWaste(parts[4]);
+                person.setCarton(parts[5]);
+                person.setElectronic(parts[6]);
+                person.setGlass(parts[7]);
+                person.setHazardous(parts[8]);
+                person.setMetal(parts[9]);
+                person.setPaper(parts[10]);
+                person.setPlastic(parts[11]);
+                person.setEstimate(parts[12]);
                 people.put(password, person);
             }
             System.out.println("Toimii4");
