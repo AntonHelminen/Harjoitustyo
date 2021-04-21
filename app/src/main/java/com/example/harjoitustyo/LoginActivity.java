@@ -27,6 +27,7 @@ public class LoginActivity extends AppCompatActivity {
         //First file-read
         Context context = LoginActivity.this;
         person_manager.readFile(context);
+        person_manager.writeFile(context);
 
         username = (TextView) findViewById(R.id.editTextTextPersonName);
         password = (TextView) findViewById(R.id.editTextTextPassword);
