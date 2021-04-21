@@ -17,6 +17,8 @@ import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
 
+import java.sql.SQLOutput;
+
 public class MainActivity extends AppCompatActivity {
 
     NavigationView navigationView;
@@ -58,7 +60,16 @@ public class MainActivity extends AppCompatActivity {
                     fragment = new HelpFragment();
                 }
                 else if (id == R.id.nav_logout) {
+                    User user = User.getInstance();
+                    for(String key: person_manager.getPeopleMap().keySet()) {
+                        System.out.println(person_manager.getPeopleMap().get(key).getName());
+                    }
+                    person_manager.removePerson(user.getPerson().getPassword(), user.getPerson().getUsername());
+                    person_manager.addPerson(user.getPerson());
                     person_manager.writeFile(context);
+                    for(String key: person_manager.getPeopleMap().keySet()) {
+                        System.out.println(person_manager.getPeopleMap().get(key).getBioWaste());
+                    }
                     logout();
                     resume = false;
                     finish();

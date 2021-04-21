@@ -92,7 +92,7 @@ class Login_Manager {
     // login checker
     public boolean login(String password, String username) {
         System.out.println(password + username);
-        if (person_manager.findPerson(password, username)) {
+        if (find_person(password, username)) {
             user.setPerson(person);
             return true;
         }

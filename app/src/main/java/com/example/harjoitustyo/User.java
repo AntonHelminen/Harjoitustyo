@@ -4,7 +4,7 @@ package com.example.harjoitustyo;
 Is Singleton*/
 public class User {
     private static User user = new User();
-    private Person person;
+    private Person person = null;
     public static User getInstance() {
         return user;
     }

@@ -92,6 +92,9 @@ public class SignUpActivity extends AppCompatActivity {
         }
         /* If none of them is empty */
         loginManager.createPerson(editUsername.getText().toString(), editPassword.getText().toString(), editName.getText().toString(), Integer.valueOf(editAge.getText().toString()));
+        for (String key : person_manager.getPeopleMap().keySet()) {
+            System.out.println(person_manager.getPeopleMap().get(key).getBioWaste());
+        }
         person_manager.writeFile(context);
         notification = "Welcome!";
         Toast.makeText(this, notification, Toast.LENGTH_SHORT).show();
