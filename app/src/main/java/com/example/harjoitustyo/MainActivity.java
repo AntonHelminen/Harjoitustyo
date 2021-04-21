@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
                     transaction.replace(R.id.fragmentWindow, fragment);
                     transaction.commit();
                 }
-
+                drawerLayout.closeDrawers();
                 return false;
             }
         });
