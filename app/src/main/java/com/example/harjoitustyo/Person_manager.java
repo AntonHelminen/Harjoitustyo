@@ -60,6 +60,7 @@ public class Person_manager {
     // Old DataFile_manager methods
     public void writeFile(Context context) {
         try {
+            System.out.println("Toimii");
             OutputStreamWriter osw = new OutputStreamWriter(context.openFileOutput("Data_file.txt", Context.MODE_PRIVATE));
             for (String key : people.keySet()){
                 Person person = people.get(key);
@@ -74,6 +75,7 @@ public class Person_manager {
                 osw.write(line);
                 osw.write(line2);
                 osw.write(line3);
+                System.out.println("Toimii2");
             }
         }
         catch (IOException e) {
@@ -83,6 +85,7 @@ public class Person_manager {
     //When given context, reads all people's data from a txt file and puts it in a HashMap
     public void readFile(Context context) {
         try {
+            System.out.println("Toimii");
             InputStream in = context.openFileInput("Data_file.txt");
             BufferedReader br = new BufferedReader(new InputStreamReader(in));
             String line;
@@ -98,6 +101,7 @@ public class Person_manager {
                 person.setHome_town(home);
                 people.put(password, person);
             }
+            System.out.println("Toimii2");
             in.close();
         }
         catch (IOException e) {
