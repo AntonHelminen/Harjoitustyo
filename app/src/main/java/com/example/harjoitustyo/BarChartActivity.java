@@ -2,7 +2,6 @@ package com.example.harjoitustyo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -25,14 +24,9 @@ public class BarChartActivity extends AppCompatActivity {
         BarChart barChart = (BarChart) findViewById(R.id.barChart);
 
         ArrayList<BarEntry> visitors = new ArrayList<>();
-        visitors.add(new BarEntry(2014,420));
-        visitors.add(new BarEntry(2015,475));
-        visitors.add(new BarEntry(2016,508));
-        visitors.add(new BarEntry(2017,660));
-        visitors.add(new BarEntry(2018,550));
-        visitors.add(new BarEntry(2019,630));
-        visitors.add(new BarEntry(2020,470));
-
+        //for (int i = 1; i <= ; i++) {
+        //    visitors.add(new BarEntry(i, ));
+        //}
         BarDataSet barDataSet = new BarDataSet(visitors, "Visitors");
         barDataSet.setColors(ColorTemplate.MATERIAL_COLORS);
         barDataSet.setValueTextColor(Color.BLACK);
@@ -47,8 +41,7 @@ public class BarChartActivity extends AppCompatActivity {
     }
 
     public void GoBack(View v)  {
-        Intent intent = new Intent(this, ViewDataFragment.class);
-        startActivity(intent);
+        finish();
     }
 
 }
