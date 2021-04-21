@@ -2,8 +2,10 @@ package com.example.harjoitustyo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
 
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.data.BarData;
@@ -43,4 +45,10 @@ public class BarChartActivity extends AppCompatActivity {
         barChart.getDescription().setText("Bar Chart Example");
         barChart.animateY(2000);
     }
+
+    public void GoBack(View v)  {
+        Intent intent = new Intent(this, ViewDataFragment.class);
+        startActivity(intent);
+    }
+
 }

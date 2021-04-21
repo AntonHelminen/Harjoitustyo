@@ -2,8 +2,10 @@ package com.example.harjoitustyo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
 
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.PieChart;
@@ -48,4 +50,10 @@ public class PieChartActivity extends AppCompatActivity {
         pieChart.animate();
 
     }
+
+    public void GoBack(View v)  {
+        Intent intent = new Intent(this, ViewDataFragment.class);
+        startActivity(intent);
+    }
+
 }
