@@ -28,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Person_manager person_manager = Person_manager.getInstance();
+        Context context = MainActivity.this;
         /* Making DrawerLayout and NavigationView to create SideMenu */
         drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.open, R.string.close);
@@ -58,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
                 else if (id == R.id.nav_logout) {
                     logout();
                     resume = false;
+                    person_manager.writeFile(context);
                     finish();
                 }
                 if (resume) {
