@@ -24,11 +24,11 @@ public class BarChartActivity extends AppCompatActivity {
 
         BarChart barChart = (BarChart) findViewById(R.id.barChart);
 
-        ArrayList<BarEntry> visitors = new ArrayList<>();
+        ArrayList<BarEntry> evaluations = new ArrayList<>();
         for (int i = 1; i <= user.getPerson().getC02().size(); i++) {
-            visitors.add(new BarEntry(i, Math.round(user.getPerson().getC02().get(i-1))));
+            evaluations.add(new BarEntry(i, Math.round(user.getPerson().getC02().get(i-1))));
         }
-        BarDataSet barDataSet = new BarDataSet(visitors, "Visitors");
+        BarDataSet barDataSet = new BarDataSet(evaluations, "Users evaluations");
         barDataSet.setColors(ColorTemplate.MATERIAL_COLORS);
         barDataSet.setValueTextColor(Color.BLACK);
         barDataSet.setValueTextSize(16f);
@@ -37,7 +37,7 @@ public class BarChartActivity extends AppCompatActivity {
 
         barChart.setFitBars(true);
         barChart.setData(barData);
-        barChart.getDescription().setText("Bar Chart Example");
+        barChart.getDescription().setText("CO2 value (kg/year)");
         barChart.animateY(2000);
     }
 
