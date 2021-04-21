@@ -47,7 +47,7 @@ public class Person {
     public int getAge() {
         return this.age;
     }
-    public ArrayList getC02() {
+    public ArrayList<Double> getC02() {
         return this.C02;
     }
     public String getBioWaste() {

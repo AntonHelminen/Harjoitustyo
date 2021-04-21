@@ -20,13 +20,14 @@ public class BarChartActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bar_chart);
+        User user = User.getInstance();
 
         BarChart barChart = (BarChart) findViewById(R.id.barChart);
 
         ArrayList<BarEntry> visitors = new ArrayList<>();
-        //for (int i = 1; i <= ; i++) {
-        //    visitors.add(new BarEntry(i, ));
-        //}
+        for (int i = 1; i <= user.getPerson().getC02().size(); i++) {
+            visitors.add(new BarEntry(i, Integer.valueOf(String.valueOf(user.getPerson().getC02().get(i-1)))));
+        }
         BarDataSet barDataSet = new BarDataSet(visitors, "Visitors");
         barDataSet.setColors(ColorTemplate.MATERIAL_COLORS);
         barDataSet.setValueTextColor(Color.BLACK);

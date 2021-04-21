@@ -1,5 +1,6 @@
 package com.example.harjoitustyo;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +14,7 @@ import com.google.android.material.textfield.TextInputLayout;
 public class SignUpActivity extends AppCompatActivity {
     private EditText editName, editAge, editUsername, editPassword, editConfirm;
     String notification;
+    Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +26,7 @@ public class SignUpActivity extends AppCompatActivity {
         editUsername = (EditText) findViewById(R.id.edit_username);
         editPassword = (EditText) findViewById(R.id.edit_password);
         editConfirm = (EditText) findViewById(R.id.edit_confirm);
+        context = SignUpActivity.this;
 
     }
     /* Validating inputs */
@@ -82,12 +85,14 @@ public class SignUpActivity extends AppCompatActivity {
 
     public void SignUp(View v)  {
         Login_Manager loginManager = Login_Manager.getInstance();
+        Person_manager person_manager = Person_manager.getInstance();
         /* Checking inputs */
         if (!validateName() | !validateAge() | !validateUsername() | !validatePassword())   {
             return;
         }
         /* If none of them is empty */
         loginManager.createPerson(editUsername.getText().toString(), editPassword.getText().toString(), editName.getText().toString(), Integer.valueOf(editAge.getText().toString()));
+        person_manager.writeFile(context);
         notification = "Welcome!";
         Toast.makeText(this, notification, Toast.LENGTH_SHORT).show();
     }

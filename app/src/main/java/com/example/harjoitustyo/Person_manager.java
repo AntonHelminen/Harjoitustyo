@@ -65,7 +65,8 @@ public class Person_manager {
             System.out.println("Toimiib2");
             for (String key : people.keySet()){
                 Person person = people.get(key);
-                String line = person.getUsername() + ";" + person.getPassword() + ";" +  person.getName() + ";" + person.getAge() + ";" + person.getHome_town();
+                String line = person.getUsername() + ";" + person.getPassword() + ";" +  person.getName() + ";" + person.getAge() + ";";
+                System.out.println(line);
                 int i = 0;
                 String line2 = "";
                 while (i < person.getC02().size()) {
@@ -78,6 +79,7 @@ public class Person_manager {
                 osw.write(line3);
                 System.out.println("Toimii2");
             }
+            osw.close();
         }
         catch (IOException e) {
             Log.e("IOException", "Error in input");
@@ -98,10 +100,10 @@ public class Person_manager {
                 String username = parts[0];
                 String password = parts[1];
                 String name = parts[2];
+                System.out.println("Hello team!");
                 int age = Integer.valueOf(parts[3]);
-                String home = parts[4];
+                System.out.println(age);
                 Person person = new Person(username, password, name, age);
-                person.setHome_town(home);
                 people.put(password, person);
             }
             System.out.println("Toimii4");
