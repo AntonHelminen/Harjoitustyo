@@ -60,8 +60,9 @@ public class Person_manager {
     // Old DataFile_manager methods
     public void writeFile(Context context) {
         try {
-            System.out.println("Toimii");
+            System.out.println("Toimiib1");
             OutputStreamWriter osw = new OutputStreamWriter(context.openFileOutput("Data_file.txt", Context.MODE_PRIVATE));
+            System.out.println("Toimiib2");
             for (String key : people.keySet()){
                 Person person = people.get(key);
                 String line = person.getUsername() + ";" + person.getPassword() + ";" +  person.getName() + ";" + person.getAge() + ";" + person.getHome_town();
@@ -87,7 +88,9 @@ public class Person_manager {
         try {
             System.out.println("Toimii");
             InputStream in = context.openFileInput("Data_file.txt");
+            System.out.println("Toimii2");
             BufferedReader br = new BufferedReader(new InputStreamReader(in));
+            System.out.println("Toimii3");
             String line;
             people.clear();
             while ((line=br.readLine())!=null) {
@@ -101,7 +104,7 @@ public class Person_manager {
                 person.setHome_town(home);
                 people.put(password, person);
             }
-            System.out.println("Toimii2");
+            System.out.println("Toimii4");
             in.close();
         }
         catch (IOException e) {
