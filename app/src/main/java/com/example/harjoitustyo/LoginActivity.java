@@ -1,5 +1,6 @@
 package com.example.harjoitustyo;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -17,11 +18,15 @@ public class LoginActivity extends AppCompatActivity {
     private Button LogIn;
     private Button Bypass;
     Login_Manager login_manager = Login_Manager.getInstance();
+    Person_manager person_manager = Person_manager.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        //First file-read
+        Context context = LoginActivity.this;
+        person_manager.readFile(context);
 
         username = (TextView) findViewById(R.id.editTextTextPersonName);
         password = (TextView) findViewById(R.id.editTextTextPassword);
@@ -60,6 +65,7 @@ public class LoginActivity extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity.class);
         Boolean worked = login_manager.login(password.getText().toString(), username.getText().toString());
         if (worked) {
+
             startActivity(intent);
         }
         else {
