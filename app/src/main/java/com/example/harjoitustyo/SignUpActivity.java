@@ -9,11 +9,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.material.textfield.TextInputLayout;
-
 public class SignUpActivity extends AppCompatActivity {
     private EditText editName, editAge, editUsername, editPassword, editConfirm;
-    String notification;
     Context context;
 
     @Override
@@ -91,13 +88,12 @@ public class SignUpActivity extends AppCompatActivity {
             return;
         }
         /* If none of them is empty */
+        Toast.makeText(this, "Welcome!", Toast.LENGTH_SHORT).show();
         loginManager.createPerson(editUsername.getText().toString(), editPassword.getText().toString(), editName.getText().toString(), Integer.valueOf(editAge.getText().toString()));
         for (String key : person_manager.getPeopleMap().keySet()) {
             System.out.println(person_manager.getPeopleMap().get(key).getBioWaste());
         }
         person_manager.writeFile(context);
-        notification = "Welcome!";
-        Toast.makeText(this, notification, Toast.LENGTH_SHORT).show();
     }
 
     public void GoBack(View v)  {
