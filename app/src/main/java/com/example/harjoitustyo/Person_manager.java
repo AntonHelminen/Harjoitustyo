@@ -67,6 +67,7 @@ public class Person_manager {
             OutputStreamWriter osw = new OutputStreamWriter(context.openFileOutput("Data_file.txt", Context.MODE_PRIVATE));
             for (String key : people.keySet()){
                 Person person = people.get(key);
+                System.out.println("File being written!");
                 String line = person.getUsername() + ";" + person.getPassword() + ";" +  person.getName() + ";" + person.getAge() + ";";
                 System.out.println(line);
                 int i = 0;
@@ -102,6 +103,7 @@ public class Person_manager {
             String line;
             people.clear();
             while ((line=br.readLine())!=null) {
+                System.out.println("File being read!");
                 String[] parts = line.split(";");
                 String username = parts[0];
                 String password = parts[1];
@@ -110,16 +112,19 @@ public class Person_manager {
 
                 Person person = new Person(username, password, name, age);
                 //CO2 values
-                if (parts[4].equals(null)) {
+                if (!(parts[4].equals("null"))) {
+                    System.out.println("CO2 being read!");
                     String[] parts2 = parts[4].split(",");
                     int i = 0;
                     while (i < parts2.length) {
                         person.setC02(Double.valueOf(parts2[i]));
+                        i ++;
                     }
                 }
 
                 //These are empty at first reads, so must pay attention to null-pointer errors.
-                if (parts[5].equals(null)) {
+                if (!(parts[5].equals("null"))) {
+                    System.out.println("Habits being read!");
                     person.setBioWaste(parts[5]);
                     person.setCarton(parts[6]);
                     person.setElectronic(parts[7]);
@@ -137,5 +142,27 @@ public class Person_manager {
         catch (IOException e) {
             Log.e("IOException", "Error in input");
         }
+    }
+    public String personToString(Person person) {
+        String data = "(-Basic info-)" +
+                "\nUsername: " + person.getUsername() +
+                "\nPassword: " + person.getPassword() +
+
+                "\n\nActual name: " + person.getName() +
+                "\nAge:" + person.getAge() +
+
+                "\n\nData:" +
+                "\nCO2 load: " + person.getC02() +
+                "\nBiowaste: " +person.getBioWaste() +
+                "\nCarton: " +person.getCarton() +
+                "\nElectronics: " +person.getElectronic() +
+                "\nGlass: " +person.getGlass() +
+                "\nHazardous: " + person.getHazardous() +
+                "\nMetal: " + person.getMetal() +
+                "\nPaper: " + person.getPaper() +
+                "\nPlastic: " + person.getPlastic() +
+
+                "\n\nEstimate: " + person.getEstimate();
+        return data;
     }
 }
