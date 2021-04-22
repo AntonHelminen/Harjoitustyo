@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.data.BarData;
@@ -23,7 +24,9 @@ public class BarChartActivity extends AppCompatActivity {
         User user = User.getInstance();
 
         BarChart barChart = (BarChart) findViewById(R.id.barChart);
-
+        if (user.getPerson().getC02().size() == 0)   {
+            Toast.makeText(this, "Add data first!", Toast.LENGTH_SHORT).show();
+        }
         ArrayList<BarEntry> evaluations = new ArrayList<>();
         for (int i = 1; i <= user.getPerson().getC02().size(); i++) {
             evaluations.add(new BarEntry(i, Math.round(user.getPerson().getC02().get(i-1))));

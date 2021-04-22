@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -64,7 +65,7 @@ public class LoginActivity extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity.class);
         Boolean worked = login_manager.login(password.getText().toString(), username.getText().toString());
         if (worked) {
-
+            Toast.makeText(this, "Welcome!", Toast.LENGTH_SHORT).show();
             startActivity(intent);
         }
         else {
