@@ -33,6 +33,10 @@
     <string name="pie_chart">Pie Chart</string>
     <string name="bar_chart">Bar Chart</string>
     <string name="radar_chart">Radar Chart</string>
+    <string name="add_data2">Add Data</string>
+    <string name="for_each_waste_type_pick_the_option_that_best_describes_your_waste_sorting_after_submitting_options_you_can_calculate_your_co2_value_kg_year_after_adding_data_you_can_use_view_data">For each waste type, pick the option that best describes your waste sorting. After submitting options you can calculate your CO2 value (kg/year). After adding data you can use View Data.</string>
+    <string name="view_data2">View Data</string>
+    <string name="view_data_has_two_options_the_first_option_is_bar_chart_which_shows_evaluations_of_your_co2_values_kg_year_new_bar_will_be_added_every_time_you_add_data_the_second_option_is_pie_chart_which_shows_all_waste_types_and_how_often_they_are_sorted_remember_to_add_data_first">View Data has two options. The first option is Bar Chart which shows evaluations of your CO2 values (kg/year). New bar will be added every time you add data. The second option is Pie Chart which shows all waste types and how often they are sorted. Remember to add data first!</string>
     <string-array name="Choice">
         <item>never</item>
         <item>sometimes</item>
