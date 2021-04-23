@@ -154,4 +154,40 @@ public class Data_Manager {
 
         return results;
     }
+    public Double[] sorting_by_age() {
+        Double[] results = new Double[5];
+        int value = 0;
+        for (String key : people.keySet()) {
+            Person person = people.get(key);
+            value = person_habits_to_value(person);
+            int age = person.getAge();
+            if (age <= 18) {
+                results[0] = results[0] + value;
+            }
+            else if (age > 18 && age <= 35) {
+                results[1] = results[1] + value;
+            }
+            else if (age > 35 && age <= 50) {
+                results[2] = results[2] + value;
+            }
+            else if (age > 50 && age <= 65) {
+                results[3] = results[3] + value;
+            }
+            else if (age > 65) {
+                results[4] = results[4] + value;
+            }
+        }
+        return results;
+    }
+    public int person_habits_to_value(Person person) {
+        int value = 0;
+        HashMap<String, String> habits = person.getHabits();
+        for (String key : habits.keySet()) {
+            String habit = habits.get(key);
+            if (!(habit.equals("null"))) {
+                value += converter(habit);
+            }
+        }
+        return value;
+    }
 }
