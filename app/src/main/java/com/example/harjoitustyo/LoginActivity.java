@@ -48,13 +48,7 @@ public class LoginActivity extends AppCompatActivity {
                 Login();
             }
         });
-        Bypass = (Button) findViewById(R.id.Bypass);
-        Bypass.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                BypassAll();
-            }
-        });
+
 
 
     }
@@ -72,9 +66,5 @@ public class LoginActivity extends AppCompatActivity {
         else {
             Toast.makeText(this, "Wrong username or password. Sign up if you haven't created an account yet.", Toast.LENGTH_LONG).show();
         }
-    }
-    public void BypassAll() {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
     }
 }

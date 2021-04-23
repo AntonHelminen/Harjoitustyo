@@ -58,14 +58,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/Bypass"
-        android:layout_width="108dp"
-        android:layout_height="51dp"
-        android:text="@string/bypass"
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="197dp"
+        android:layout_height="47dp"
+        android:text="RECYCLING APP"
+        android:gravity="center"
+        android:textSize="21dp"
+        android:textColor="#669933"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.096" />
+        app:layout_constraintVertical_bias="0.112" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
