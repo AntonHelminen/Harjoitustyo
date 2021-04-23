@@ -89,20 +89,38 @@ public class SignUpActivity extends AppCompatActivity {
         }
 
         char[] chars = passwordInput.toCharArray();
+        Boolean hasDigit = false;
+        Boolean hasUppercase = false;
+        Boolean hasLowercase = false;
         for (char c: chars) {
-            if (!Character.isDigit(c)) {
-                Toast.makeText(this, "Doesn't contain a digit.", Toast.LENGTH_LONG).show();
-                return false;
+            if (Character.isDigit(c)) {
+                hasDigit = true;
             }
             if (!Character.isUpperCase(c)) {
-                Toast.makeText(this, "Doesn't contain an uppercase letter.", Toast.LENGTH_LONG).show();
-                return false;
+                hasUppercase = true;
             }
             if (!Character.isLowerCase(c)) {
-                Toast.makeText(this, "Doesn't contain an lowercase letter.", Toast.LENGTH_LONG).show();
-                return false;
+                hasLowercase = true;
             }
 
+        }
+        if (hasDigit) {
+        }
+        else {
+            Toast.makeText(this, "Doesn't contain a digit.", Toast.LENGTH_LONG).show();
+            return false;
+        }
+        if (hasUppercase) {
+        }
+        else {
+            Toast.makeText(this, "Doesn't contain an uppercase letter.", Toast.LENGTH_LONG).show();
+            return false;
+        }
+        if (hasLowercase) {
+        }
+        else {
+            Toast.makeText(this, "Doesn't contain an lowercase letter.", Toast.LENGTH_LONG).show();
+            return false;
         }
 
         if (!(passwordInput.equals(confirmInput)))    {

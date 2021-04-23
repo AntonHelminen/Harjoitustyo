@@ -8,6 +8,7 @@ public class Data_Manager {
     private static Data_Manager data_Manager= new Data_Manager();
     Person_manager person_manager = Person_manager.getInstance();
     HashMap<String, Person> people = person_manager.getPeopleMap();
+    //A multi-purpose HashMap variable
     HashMap<String, String> habits;
 
     public static Data_Manager getInstance() {
@@ -154,6 +155,7 @@ public class Data_Manager {
 
         return results;
     }
+    //Calculates users' recycling habits per age-group. Returns an array of results.
     public Double[] sorting_by_age() {
         Double[] results = new Double[5];
         int value = 0;
@@ -179,12 +181,13 @@ public class Data_Manager {
         }
         return results;
     }
+    //Used for turning a person's recycling habits into a simple Integer value.
     public int person_habits_to_value(Person person) {
         int value = 0;
-        HashMap<String, String> habits = person.getHabits();
+        habits = person.getHabits();
         for (String key : habits.keySet()) {
             String habit = habits.get(key);
-            if (!(habit.equals("null"))) {
+            if (!(habit.equals(null))) {
                 value += converter(habit);
             }
         }
