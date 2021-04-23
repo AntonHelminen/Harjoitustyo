@@ -163,7 +163,7 @@ public class Data_Manager {
         for (String key : people.keySet()) {
             System.out.println("Reading a person");
             Person person = people.get(key);
-            person_manager.personToString(person);
+            System.out.println(person_manager.personToString(person));
             value = person_habits_to_value(person);
             int age = person.getAge();
             if (age <= 18) {
