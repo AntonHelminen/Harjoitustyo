@@ -9,6 +9,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.regex.Pattern;
+
 public class SignUpActivity extends AppCompatActivity {
     private EditText editName, editAge, editUsername, editPassword, editConfirm;
     Context context;
@@ -70,8 +72,42 @@ public class SignUpActivity extends AppCompatActivity {
         String passwordInput = editPassword.getText().toString();
         String confirmInput = editConfirm.getText().toString();
 
+        if (passwordInput.isEmpty())    {
+            editPassword.setError("Field can't be empty!");
+            editConfirm.setError("Field can't be empty!");
+            return false;
+        }
+
+        if (!(passwordInput.length() >= 12)) {
+            Toast.makeText(this, "Is not long enough. Must be at least 12 characters.", Toast.LENGTH_LONG).show();
+            return false;
+        }
+
+        if (Pattern.matches("[a-zA-Z]+", passwordInput)) {
+            Toast.makeText(this, "Doesn't contain a special character.", Toast.LENGTH_LONG).show();
+            return false;
+        }
+
+        char[] chars = passwordInput.toCharArray();
+        for (char c: chars) {
+            if (!Character.isDigit(c)) {
+                Toast.makeText(this, "Doesn't contain a digit.", Toast.LENGTH_LONG).show();
+                return false;
+            }
+            if (!Character.isUpperCase(c)) {
+                Toast.makeText(this, "Doesn't contain an uppercase letter.", Toast.LENGTH_LONG).show();
+                return false;
+            }
+            if (!Character.isLowerCase(c)) {
+                Toast.makeText(this, "Doesn't contain an lowercase letter.", Toast.LENGTH_LONG).show();
+                return false;
+            }
+
+        }
+
         if (!(passwordInput.equals(confirmInput)))    {
             editPassword.setError("Passwords do not match!");
+            editConfirm.setError("Passwords do not match!");
             return false;
         }
         else    {
@@ -88,11 +124,12 @@ public class SignUpActivity extends AppCompatActivity {
             return;
         }
         /* If none of them is empty */
-        Toast.makeText(this, "Signed up", Toast.LENGTH_LONG).show();
         loginManager.createPerson(editUsername.getText().toString(), editPassword.getText().toString(), editName.getText().toString(), Integer.valueOf(editAge.getText().toString()));
+        /* If fields aren't empty and password is good */
         for (String key : person_manager.getPeopleMap().keySet()) {
             System.out.println(person_manager.getPeopleMap().get(key).getBioWaste());
         }
+        Toast.makeText(this, "Account created!", Toast.LENGTH_LONG).show();
         person_manager.writeFile(context);
     }
 
