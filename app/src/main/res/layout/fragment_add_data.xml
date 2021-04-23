@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="64dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="50dp"
         android:text="@string/biowaste"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -21,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="64dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="50dp"
         android:text="@string/carton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
@@ -31,7 +31,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="64dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="50dp"
         android:text="@string/electronic"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
@@ -41,7 +41,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="64dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="50dp"
         android:text="@string/glass"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
@@ -51,7 +51,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="64dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="50dp"
         android:text="@string/hazardous"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
@@ -61,7 +61,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="64dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="50dp"
         android:text="@string/metal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
@@ -71,7 +71,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="64dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="50dp"
         android:text="@string/paper"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
@@ -81,7 +81,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="64dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="50dp"
         android:text="@string/plastic"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
@@ -91,7 +91,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="64dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="50dp"
         android:text="@string/amount"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView10" />
@@ -100,7 +100,7 @@
         android:id="@+id/scrollView"
         android:layout_width="151dp"
         android:layout_height="27dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -121,7 +121,7 @@
         android:id="@+id/scrollView2"
         android:layout_width="151dp"
         android:layout_height="27dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="68dp"
         android:layout_marginEnd="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/scrollView">
@@ -142,7 +142,7 @@
         android:id="@+id/scrollView3"
         android:layout_width="151dp"
         android:layout_height="27dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="68dp"
         android:layout_marginEnd="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/scrollView2">
@@ -163,7 +163,7 @@
         android:id="@+id/scrollView4"
         android:layout_width="151dp"
         android:layout_height="27dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="68dp"
         android:layout_marginEnd="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/scrollView3">
@@ -184,7 +184,7 @@
         android:id="@+id/scrollView5"
         android:layout_width="151dp"
         android:layout_height="27dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="68dp"
         android:layout_marginEnd="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/scrollView4">
@@ -205,7 +205,7 @@
         android:id="@+id/scrollView6"
         android:layout_width="151dp"
         android:layout_height="27dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="68dp"
         android:layout_marginEnd="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/scrollView5">
@@ -226,7 +226,7 @@
         android:id="@+id/scrollView7"
         android:layout_width="151dp"
         android:layout_height="27dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="68dp"
         android:layout_marginEnd="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/scrollView6">
@@ -247,7 +247,7 @@
         android:id="@+id/scrollView8"
         android:layout_width="151dp"
         android:layout_height="27dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="68dp"
         android:layout_marginEnd="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/scrollView7">
@@ -268,7 +268,7 @@
         android:id="@+id/scrollView9"
         android:layout_width="151dp"
         android:layout_height="27dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="68dp"
         android:layout_marginEnd="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/scrollView8">
@@ -291,7 +291,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="64dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="16dp"
         android:text="@string/waste_type"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -301,7 +301,7 @@
         android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="104dp"
         android:text="@string/frequency"
         android:textSize="18sp"
