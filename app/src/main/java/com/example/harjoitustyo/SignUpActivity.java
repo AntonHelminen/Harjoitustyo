@@ -148,6 +148,9 @@ public class SignUpActivity extends AppCompatActivity {
         }
         Toast.makeText(this, "Account created!", Toast.LENGTH_LONG).show();
         person_manager.writeFile(context);
+
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
     }
 
     public void GoBack(View v)  {
