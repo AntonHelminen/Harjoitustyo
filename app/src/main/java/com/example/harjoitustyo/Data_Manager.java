@@ -167,6 +167,7 @@ public class Data_Manager {
             System.out.println(person_manager.personToString(person));
             value = person_habits_to_value(person);
             int age = person.getAge();
+            System.out.println("\n\n\nAge: " + age);
             if (age <= 18) {
                 results[0] = results[0] + value;
             }
@@ -193,12 +194,15 @@ public class Data_Manager {
     //Used for turning a person's recycling habits into a simple Integer value.
     public int person_habits_to_value(Person person) {
         int value = 0;
+        System.out.println("SOMETHING MUST WORK!!" + person.getPlastic());
+        person.setHabits();
         habits = person.getHabits();
         for (String key : habits.keySet()) {
             System.out.println("key: " + key);
             String habit = habits.get(key);
-            if (!(habit.equals(null))) {
-                System.out.println("habit: " + habit);
+            System.out.println("habit: " + habit);
+            if (habit != null) {
+
                 System.out.println("converter(habit): " + converter(habit));
                 value += converter(habit);
             }

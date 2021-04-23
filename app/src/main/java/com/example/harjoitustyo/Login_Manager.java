@@ -20,6 +20,7 @@ class Login_Manager {
     public boolean find_person(String password, String username) {
         if (person_manager.findPerson(password, username)) {
             person = person_manager.getPerson(password, username);
+            person.setHabits();
             return true;
         }
         return false;
