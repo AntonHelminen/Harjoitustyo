@@ -32,7 +32,7 @@ public class BarChartActivity extends AppCompatActivity {
             evaluations.add(new BarEntry(i, Math.round(user.getPerson().getC02().get(i-1))));
         }
         BarDataSet barDataSet = new BarDataSet(evaluations, "Users evaluations");
-        barDataSet.setColors(ColorTemplate.MATERIAL_COLORS);
+        barDataSet.setColors(ColorTemplate.COLORFUL_COLORS);
         barDataSet.setValueTextColor(Color.BLACK);
         barDataSet.setValueTextSize(16f);
 
