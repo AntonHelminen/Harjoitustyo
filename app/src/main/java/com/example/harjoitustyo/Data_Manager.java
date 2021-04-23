@@ -158,8 +158,10 @@ public class Data_Manager {
     //Calculates users' recycling habits per age-group. Returns an array of results.
     public int[] sorting_by_age() {
         int[] results = new int[5];
-        int value = 0;
+        int value;
+        System.out.println("Amount of people: " + people.size());
         for (String key : people.keySet()) {
+            System.out.println("Reading a person");
             Person person = people.get(key);
             value = person_habits_to_value(person);
             int age = person.getAge();
