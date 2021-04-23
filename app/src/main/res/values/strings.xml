@@ -40,6 +40,7 @@
     <string name="login">Login</string>
     <string name="password2">Password</string>
     <string name="bypass">Bypass</string>
+    <string name="profile">Profile</string>
     <string-array name="Choice">
         <item>never</item>
         <item>sometimes</item>

@@ -92,6 +92,12 @@ public class MainActivity extends AppCompatActivity {
                      person.setFragment("Home");
                      user.setPerson(person);
                 }
+                else if (id == R.id.nav_profile) {
+                    fragment = new ProfileFragment();
+                    person = user.getPerson();
+                    person.setFragment("Profile");
+                    user.setPerson(person);
+                }
                 else if (id == R.id.nav_add_data) {
                     fragment = new AddDataFragment();
                     person = user.getPerson();
