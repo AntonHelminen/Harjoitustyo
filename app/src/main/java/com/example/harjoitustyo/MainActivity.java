@@ -50,29 +50,65 @@ public class MainActivity extends AppCompatActivity {
         TextView nav = (TextView) hviev.findViewById(R.id.textView);
         nav.setText(user.getPerson().getUsername());
 
-        //Setting fragment to home at start
-        fragment = new HomeFragment();
+        //Setting fragment at start based on previous visit
+        Person person = user.getPerson();
+        String previousfragment = person.getFragment();
+        if (previousfragment == null) {
+            fragment = new HomeFragment();
+        }
+        else {
+            if (previousfragment.equals("Home")) {
+                fragment = new HomeFragment();
+            }
+            else if (previousfragment.equals("Data")){
+                fragment = new AddDataFragment();
+            }
+            else if (previousfragment.equals("View")){
+                fragment = new ViewDataFragment();
+            }
+            else if (previousfragment.equals("Help")){
+                fragment = new HelpFragment();
+            }
+            else {
+                fragment = new HomeFragment();
+            }
+        }
+
+
         FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
         transaction.replace(R.id.fragmentWindow, fragment);
         transaction.commit();
-
+        //Setting frgament at start based on previous visit
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 Boolean resume  = true;
+                Person person;
                 int id = item.getItemId();
                 if (id == R.id.nav_home) {
                     fragment = new HomeFragment();
+                     person = user.getPerson();
+                     person.setFragment("Home");
+                     user.setPerson(person);
                 }
                 else if (id == R.id.nav_add_data) {
                     fragment = new AddDataFragment();
+                    person = user.getPerson();
+                    person.setFragment("Data");
+                    user.setPerson(person);
                 }
                 else if (id == R.id.nav_view_data) {
                     fragment = new ViewDataFragment();
+                    person = user.getPerson();
+                    person.setFragment("View");
+                    user.setPerson(person);
                 }
                 else if (id == R.id.nav_help) {
                     fragment = new HelpFragment();
+                    person = user.getPerson();
+                    person.setFragment("Help");
+                    user.setPerson(person);
                 }
                 else if (id == R.id.nav_logout) {
                     User user = User.getInstance();

@@ -84,10 +84,12 @@ public class Person_manager {
                 else {
                     line2 = "null";
                 }
-                String line3 = ";" + person.getBioWaste() + ";" + person.getCarton() + ";" + person.getElectronic() + ";" + person.getGlass() + ";" + person.getHazardous() + ";" + person.getMetal() + ";" + person.getPaper() + ";" + person.getPlastic() + ";" + person.getEstimate() + "\n";
+                String line3 = ";" + person.getBioWaste() + ";" + person.getCarton() + ";" + person.getElectronic() + ";" + person.getGlass() + ";" + person.getHazardous() + ";" + person.getMetal() + ";" + person.getPaper() + ";" + person.getPlastic() + ";" + person.getEstimate();
+                String line4 = ";" + person.getFragment() + "\n";
                 osw.write(line);
                 osw.write(line2);
                 osw.write(line3);
+                osw.write(line4);
             }
             osw.close();
         }
@@ -111,6 +113,14 @@ public class Person_manager {
                 int age = Integer.valueOf(parts[3]);
 
                 Person person = new Person(username, password, name, age);
+                try {
+                    person.setFragment(parts[14]);
+                }
+                catch (IndexOutOfBoundsException e) {
+                    e.printStackTrace();
+                }
+
+
                 //CO2 values
                 if (!(parts[4].equals("null"))) {
                     System.out.println("CO2 being read!");

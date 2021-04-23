@@ -26,6 +26,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         //First file-read
         Context context = LoginActivity.this;
+
         person_manager.readFile(context);
 
 

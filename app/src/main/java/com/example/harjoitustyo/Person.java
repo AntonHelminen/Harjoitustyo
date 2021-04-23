@@ -24,6 +24,7 @@ public class Person {
     private String paper;
     private String plastic;
     private String estimate;
+    private String fragment;
 
     public Person(String username, String password, String name, int age) {
         this.username = username;
@@ -77,6 +78,9 @@ public class Person {
     public String getEstimate() {
         return estimate;
     }
+    public String getFragment() {
+        return fragment;
+    }
     //Setters()
     public void setUsername(String username) {
         this.username = username;
@@ -122,6 +126,9 @@ public class Person {
     }
     public void setEstimate(String s) {
         estimate = s;
+    }
+    public void setFragment(String s) {
+        fragment = s;
     }
     //Data resetter for C02
     public void reset() {
