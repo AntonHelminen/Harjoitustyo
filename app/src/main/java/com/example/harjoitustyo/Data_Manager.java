@@ -59,6 +59,7 @@ public class Data_Manager {
     }
     //Converts habit into a simple Integer value.
     public int converter(String amount) {
+        System.out.println(amount);
         int result;
         if (amount.equals("never")) {
             result = 0;
@@ -194,8 +195,11 @@ public class Data_Manager {
         int value = 0;
         habits = person.getHabits();
         for (String key : habits.keySet()) {
+            System.out.println("key: " + key);
             String habit = habits.get(key);
             if (!(habit.equals(null))) {
+                System.out.println("habit: " + habit);
+                System.out.println("converter(habit): " + converter(habit));
                 value += converter(habit);
             }
         }
