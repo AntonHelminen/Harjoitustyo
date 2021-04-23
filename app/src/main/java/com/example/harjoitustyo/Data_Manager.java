@@ -179,6 +179,11 @@ public class Data_Manager {
                 results[4] = results[4] + value;
             }
         }
+        System.out.println("indeksi 0: " + results[0]);
+        System.out.println("indeksi 1: " + results[1]);
+        System.out.println("indeksi 2: " + results[2]);
+        System.out.println("indeksi 3: " + results[3]);
+        System.out.println("indeksi 4: " + results[4]);
         return results;
     }
     //Used for turning a person's recycling habits into a simple Integer value.
@@ -191,6 +196,7 @@ public class Data_Manager {
                 value += converter(habit);
             }
         }
+        System.out.println("Value of person's habits: " + value);
         return value;
     }
 }
