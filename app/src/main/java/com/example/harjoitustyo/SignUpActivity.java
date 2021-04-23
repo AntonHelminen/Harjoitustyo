@@ -83,7 +83,7 @@ public class SignUpActivity extends AppCompatActivity {
             return false;
         }
 
-        if (Pattern.matches("[a-zA-Z]+", passwordInput)) {
+        if (Pattern.matches("[a-zA-Z0-9]+", passwordInput)) {
             Toast.makeText(this, "Doesn't contain a special character.", Toast.LENGTH_LONG).show();
             return false;
         }
@@ -96,10 +96,10 @@ public class SignUpActivity extends AppCompatActivity {
             if (Character.isDigit(c)) {
                 hasDigit = true;
             }
-            if (!Character.isUpperCase(c)) {
+            if (Character.isUpperCase(c)) {
                 hasUppercase = true;
             }
-            if (!Character.isLowerCase(c)) {
+            if (Character.isLowerCase(c)) {
                 hasLowercase = true;
             }
 
