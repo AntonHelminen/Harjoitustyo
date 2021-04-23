@@ -14,7 +14,6 @@ public class LoginActivity extends AppCompatActivity {
 
     TextView username;
     TextView password;
-    TextView Errors;
     private Button SignUp;
     private Button LogIn;
     private Button Bypass;
@@ -32,7 +31,6 @@ public class LoginActivity extends AppCompatActivity {
 
         username = (TextView) findViewById(R.id.editTextTextPersonName);
         password = (TextView) findViewById(R.id.editTextTextPassword);
-        Errors = (TextView) findViewById(R.id.ErrorField);
 
         //Button actions
         SignUp = (Button) findViewById(R.id.SignUp_button);
@@ -67,11 +65,11 @@ public class LoginActivity extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity.class);
         Boolean worked = login_manager.login(password.getText().toString(), username.getText().toString());
         if (worked) {
-            Toast.makeText(this, "Welcome!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Welcome!", Toast.LENGTH_LONG).show();
             startActivity(intent);
         }
         else {
-            Errors.setText("Wrong username or password. Sign up if you haven't created an account yet.");
+            Toast.makeText(this, "Wrong username or password. Sign up if you haven't created an account yet.", Toast.LENGTH_LONG).show();
         }
     }
     public void BypassAll() {
