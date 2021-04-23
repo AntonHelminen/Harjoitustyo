@@ -31,7 +31,7 @@ public class PieChartActivity extends AppCompatActivity {
         age_groups.add(new PieEntry(data[3], 50));
         age_groups.add(new PieEntry(data[4], 65));
 
-        PieDataSet pieDataSet = new PieDataSet(age_groups, "Visitors");
+        PieDataSet pieDataSet = new PieDataSet(age_groups, "Age groups");
         pieDataSet.setColors(ColorTemplate.COLORFUL_COLORS);
         pieDataSet.setValueTextColor(Color.BLACK);
         pieDataSet.setValueTextSize(16f);
@@ -40,7 +40,7 @@ public class PieChartActivity extends AppCompatActivity {
 
         pieChart.setData(pieData);
         pieChart.getDescription().setEnabled(false);
-        pieChart.setCenterText("Visitors");
+        pieChart.setCenterText("Age groups' sorting comparison");
         pieChart.animate();
 
     }

@@ -17,7 +17,6 @@ public class NavigationHeader extends AppCompatActivity {
         User user = User.getInstance();
         text = (TextView) findViewById(R.id.textView);
         text.setText(user.getPerson().getUsername());
-        //TODO add username when logged in
     }
 
 }
