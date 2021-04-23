@@ -79,12 +79,12 @@ public class SignUpActivity extends AppCompatActivity {
         }
 
         if (!(passwordInput.length() >= 12)) {
-            Toast.makeText(this, "Is not long enough. Must be at least 12 characters.", Toast.LENGTH_LONG).show();
+            editPassword.setError("Is not long enough. Must be at least 12 characters.");
             return false;
         }
 
         if (Pattern.matches("[a-zA-Z0-9]+", passwordInput)) {
-            Toast.makeText(this, "Doesn't contain a special character.", Toast.LENGTH_LONG).show();
+            editPassword.setError("Doesn't contain a special character.");
             return false;
         }
 
@@ -107,19 +107,19 @@ public class SignUpActivity extends AppCompatActivity {
         if (hasDigit) {
         }
         else {
-            Toast.makeText(this, "Doesn't contain a digit.", Toast.LENGTH_LONG).show();
+            editPassword.setError("Doesn't contain a digit.");
             return false;
         }
         if (hasUppercase) {
         }
         else {
-            Toast.makeText(this, "Doesn't contain an uppercase letter.", Toast.LENGTH_LONG).show();
+            editPassword.setError("Doesn't contain an uppercase letter.");
             return false;
         }
         if (hasLowercase) {
         }
         else {
-            Toast.makeText(this, "Doesn't contain an lowercase letter.", Toast.LENGTH_LONG).show();
+            editPassword.setError("Doesn't contain an lowercase letter.");
             return false;
         }
 
@@ -141,7 +141,6 @@ public class SignUpActivity extends AppCompatActivity {
         if (!validateName() | !validateAge() | !validateUsername() | !validatePassword())   {
             return;
         }
-        /* If none of them is empty */
         loginManager.createPerson(editUsername.getText().toString(), editPassword.getText().toString(), editName.getText().toString(), Integer.valueOf(editAge.getText().toString()));
         /* If fields aren't empty and password is good */
         for (String key : person_manager.getPeopleMap().keySet()) {
@@ -149,6 +148,9 @@ public class SignUpActivity extends AppCompatActivity {
         }
         Toast.makeText(this, "Account created!", Toast.LENGTH_LONG).show();
         person_manager.writeFile(context);
+
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
     }
 
     public void GoBack(View v)  {
