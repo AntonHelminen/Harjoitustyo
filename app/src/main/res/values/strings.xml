@@ -38,9 +38,7 @@
     <string name="view_data2">View Data</string>
     <string name="view_data_has_two_options_the_first_option_is_bar_chart_which_shows_evaluations_of_your_co2_values_kg_year_new_bar_will_be_added_every_time_you_add_data_the_second_option_is_pie_chart_which_shows_all_waste_types_and_how_often_they_are_sorted_remember_to_add_data_first">View Data has two options. The first option is Bar Chart which shows evaluations of your CO2 values (kg/year). New bar will be added every time you add data. The second option is Pie Chart which shows all waste types and how often they are sorted. Remember to add data first!</string>
     <string name="login">Login</string>
-    <string name="sign_up">Sign Up</string>
     <string name="password2">Password</string>
-    <string name="username">Username</string>
     <string name="bypass">Bypass</string>
     <string-array name="Choice">
         <item>never</item>
