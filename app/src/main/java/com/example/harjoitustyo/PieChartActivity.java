@@ -25,11 +25,11 @@ public class PieChartActivity extends AppCompatActivity {
         int[] data = data_manager.sorting_by_age();
 
         ArrayList<PieEntry> age_groups = new ArrayList<>();
-        age_groups.add(new PieEntry(data[0], 0));
-        age_groups.add(new PieEntry(data[1], 18));
-        age_groups.add(new PieEntry(data[2], 35));
-        age_groups.add(new PieEntry(data[3], 50));
-        age_groups.add(new PieEntry(data[4], 65));
+        age_groups.add(new PieEntry(data[0], "0-18"));
+        age_groups.add(new PieEntry(data[1], "18-35"));
+        age_groups.add(new PieEntry(data[2], "35-50"));
+        age_groups.add(new PieEntry(data[3], "50-65"));
+        age_groups.add(new PieEntry(data[4], "65+"));
 
         PieDataSet pieDataSet = new PieDataSet(age_groups, "Age groups");
         pieDataSet.setColors(ColorTemplate.COLORFUL_COLORS);

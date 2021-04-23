@@ -22,8 +22,8 @@
         android:layout_height="52dp"
         android:onClick="GoBack"
         android:text="@string/go_back"
-        app:layout_constraintBottom_toBottomOf="@+id/barChart"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/barChart" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
