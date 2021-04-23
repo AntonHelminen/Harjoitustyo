@@ -15,24 +15,23 @@ import com.github.mikephil.charting.utils.ColorTemplate;
 import java.util.ArrayList;
 
 public class PieChartActivity extends AppCompatActivity {
-
+    Data_Manager data_manager = Data_Manager.getInstance();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pie_chart);
 
         PieChart pieChart = (PieChart) findViewById(R.id.pieChart);
+        int[] data = data_manager.sorting_by_age();
 
-        ArrayList<PieEntry> visitors = new ArrayList<>();
-        visitors.add(new PieEntry(420, 2014));
-        visitors.add(new PieEntry(475, 2015));
-        visitors.add(new PieEntry(508, 2016));
-        visitors.add(new PieEntry(660, 2017));
-        visitors.add(new PieEntry(550, 2018));
-        visitors.add(new PieEntry(630, 2019));
-        visitors.add(new PieEntry(470, 2020));
+        ArrayList<PieEntry> age_groups = new ArrayList<>();
+        age_groups.add(new PieEntry(data[0], 0));
+        age_groups.add(new PieEntry(data[1], 18));
+        age_groups.add(new PieEntry(data[2], 35));
+        age_groups.add(new PieEntry(data[3], 50));
+        age_groups.add(new PieEntry(data[4], 65));
 
-        PieDataSet pieDataSet = new PieDataSet(visitors, "Visitors");
+        PieDataSet pieDataSet = new PieDataSet(age_groups, "Visitors");
         pieDataSet.setColors(ColorTemplate.COLORFUL_COLORS);
         pieDataSet.setValueTextColor(Color.BLACK);
         pieDataSet.setValueTextSize(16f);
