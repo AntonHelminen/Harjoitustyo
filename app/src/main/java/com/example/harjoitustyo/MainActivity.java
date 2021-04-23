@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Person_manager person_manager = Person_manager.getInstance();
         Context context = MainActivity.this;
+
         /* Making DrawerLayout and NavigationView to create SideMenu */
         drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.open, R.string.close);
@@ -48,6 +49,13 @@ public class MainActivity extends AppCompatActivity {
         View hviev = navigationView.getHeaderView(0);
         TextView nav = (TextView) hviev.findViewById(R.id.textView);
         nav.setText(user.getPerson().getUsername());
+
+        //Setting fragment to home at start
+        fragment = new HomeFragment();
+        FragmentManager manager = getSupportFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        transaction.replace(R.id.fragmentWindow, fragment);
+        transaction.commit();
 
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override

@@ -59,7 +59,6 @@ public class Data_Manager {
     }
     //Converts habit into a simple Integer value.
     public int converter(String amount) {
-        System.out.println(amount);
         int result;
         if (amount.equals("never")) {
             result = 0;
@@ -194,16 +193,11 @@ public class Data_Manager {
     //Used for turning a person's recycling habits into a simple Integer value.
     public int person_habits_to_value(Person person) {
         int value = 0;
-        System.out.println("SOMETHING MUST WORK!!" + person.getPlastic());
         person.setHabits();
         habits = person.getHabits();
         for (String key : habits.keySet()) {
-            System.out.println("key: " + key);
             String habit = habits.get(key);
-            System.out.println("habit: " + habit);
             if (habit != null) {
-
-                System.out.println("converter(habit): " + converter(habit));
                 value += converter(habit);
             }
         }
