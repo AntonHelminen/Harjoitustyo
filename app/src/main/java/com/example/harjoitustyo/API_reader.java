@@ -138,6 +138,7 @@ public class API_reader {
             StringBuilder sb = new StringBuilder();
             String line = null;
             while((line = br.readLine()) != null) {
+                System.out.println(line);
                 sb.append(line).append("\n");
             }
             response = sb.toString();
