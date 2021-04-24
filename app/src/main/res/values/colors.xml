@@ -8,6 +8,13 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="background">#7DB53D</color>
-    <color name="button">#DEEC55</color>
+    <color name="button">#81B8E3</color>
     <color name="title">#437804</color>
+    <color name="notsogreat">#972B2727</color>
+    <color name="betterbutnotgood">#CB637150</color>
+    <color name="average">#97547A2E</color>
+    <color name="prettygood">#9FCC6B</color>
+    <color name="great">#68B113</color>
+    <color name="orangeish">#704300</color>
+    <color name="wastecolor">#49AEFF</color>
 </resources>

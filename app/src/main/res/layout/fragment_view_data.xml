@@ -9,34 +9,20 @@
     android:gravity="center"
     android:padding="10dp">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/view_data"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView_result"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
     <Button
         android:id="@+id/buttonBarChart"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/button"
+        android:textColor="@color/black"
         android:text="@string/bar_chart"/>
 
     <Button
         android:id="@+id/buttonPieChart"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/button"
+        android:textColor="@color/black"
         android:text="@string/pie_chart"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -50,6 +36,7 @@
             android:gravity="center"
             android:text="Your current carbon footprint"
             android:textSize="23sp"
+            android:textColor="@color/orangeish"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.51"
@@ -59,18 +46,19 @@
 
         <TextView
             android:id="@+id/C02_Amount"
-            android:layout_width="125dp"
-            android:layout_height="80dp"
+            android:layout_width="115dp"
+            android:layout_height="76dp"
             android:gravity="center"
             android:text="200"
             android:textFontWeight="@android:integer/config_mediumAnimTime"
             android:textSize="40sp"
+            android:textColor="@color/orangeish"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.059"
+            app:layout_constraintHorizontal_bias="0.057"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/Display_Text"
-            app:layout_constraintVertical_bias="0.062" />
+            app:layout_constraintVertical_bias="0.072" />
 
         <TextView
             android:id="@+id/Units"
@@ -79,6 +67,7 @@
             android:gravity="center"
             android:text="kg of C02/Year"
             android:textSize="30sp"
+            android:textColor="@color/orangeish"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -91,8 +80,9 @@
             android:layout_width="309dp"
             android:layout_height="94dp"
             android:gravity="center"
-            android:text="To reduce your emissions drastically, you should recycle more:"
+            android:text="To reduce your emissions, you should recycle more:"
             android:textSize="23sp"
+            android:textColor="@color/orangeish"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.506"
@@ -102,17 +92,32 @@
 
         <TextView
             android:id="@+id/Waste_Type"
-            android:layout_width="234dp"
-            android:layout_height="62dp"
+            android:layout_width="319dp"
+            android:layout_height="64dp"
             android:gravity="center"
             android:text="waste_type"
             android:textSize="35sp"
+            android:textColor="@color/wastecolor"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.449"
+            app:layout_constraintHorizontal_bias="0.506"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.747" />
+            app:layout_constraintVertical_bias="0.687" />
+
+        <TextView
+            android:id="@+id/analysis"
+            android:layout_width="295dp"
+            android:layout_height="76dp"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textColor="@color/orangeish"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.505"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.843" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </LinearLayout>

@@ -2,12 +2,11 @@ package com.example.harjoitustyo;
 
 import android.os.StrictMode;
 
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
 
+import com.loopj.android.http.JsonHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
+
+import cz.msebera.android.httpclient.Header;
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -16,11 +15,10 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
 /*Reads an API with granted parameters
 Is Singleton*/
 public class API_reader {
@@ -123,31 +121,40 @@ public class API_reader {
     }
     // Better version for doing other calculations
     public String getJSON2(String bioWaste, String carton, String electronic, String glass, String hazardous, String metal, String paper, String plastic, String estimate) {
+
+        //Policy
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
         String response = null;
         String Url = "https://ilmastodieetti.ymparisto.fi/ilmastodieetti/calculatorapi/v1/WasteCalculator?query.bioWaste=" + bioWaste + "&query.carton=" + carton + "&query.electronic=" + electronic + "&query.glass=" + glass + "&query.hazardous=" + hazardous + "&query.metal=" + metal + "&query.paper=" + paper + "&query.plastic=" + plastic + "&query.amountEstimate=" + estimate;
-        System.out.println(Url);
+
         try {
+            //Some settings
             URL url = new URL(Url);
+            URI url2 = new URI(url.getProtocol(), url.getUserInfo(), url.getHost(), url.getPort(), url.getPath(), url.getQuery(), url.getRef());
+            url = url2.toURL();
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+
 
             connection.setRequestMethod("GET");
             connection.setDoOutput(false);
+
             InputStream in = new BufferedInputStream(connection.getInputStream());
             BufferedReader br = new BufferedReader((new InputStreamReader(in)));
             StringBuilder sb = new StringBuilder();
             String line;
             while((line = br.readLine()) != null) {
-                System.out.println(line);
                 sb.append(line).append("\n");
             }
             response = sb.toString();
             in.close();
+            br.close();
         } catch (MalformedURLException | ProtocolException e) {
             e.printStackTrace();
         } catch (IOException e) {
+            e.printStackTrace();
+        } catch (URISyntaxException e) {
             e.printStackTrace();
         }
         return response;
