@@ -57,12 +57,16 @@ public class ProfileFragment extends Fragment {
         System.out.println("This is current date in milliseconds: " + currentInMillis);
 
         ageSet = user.getPerson().getAge();
-        ageSetInMillis = ageSet * 365 * 24 * 60 * 60 * 1000;
+        System.out.println("ageSet" + ageSet);
+        ageSetInMillis = ageSet * 365 * 24 * 60 * 60 * 1000L;
+        System.out.println("ageSetInMillis: " + ageSetInMillis);
         calendar.setTimeInMillis(ageSetInMillis);
         yearSet = calendar.get(Calendar.YEAR);
-
+        System.out.println("yearSet: " + yearSet);
         String date = "1/1/" + yearSet;
         String[] parts = date.split("/");
+
+        // TODO Get right year!
 
         int day = Integer.parseInt(parts[0]);
         int month = Integer.parseInt(parts[1]);
