@@ -132,11 +132,13 @@ public class API_reader {
         try {
             URL url = new URL(Url);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+
             connection.setRequestMethod("GET");
+            connection.setDoOutput(false);
             InputStream in = new BufferedInputStream(connection.getInputStream());
             BufferedReader br = new BufferedReader((new InputStreamReader(in)));
             StringBuilder sb = new StringBuilder();
-            String line = null;
+            String line;
             while((line = br.readLine()) != null) {
                 System.out.println(line);
                 sb.append(line).append("\n");

@@ -128,10 +128,9 @@ public class Data_Manager {
         Double noSort = Double.valueOf(reader.getJSON2(b,b,b,b,b,b,b,b,c));
         Double biowaste = Double.valueOf(reader.getJSON2(a,b,b,b,b,b,b,b,c));
         System.out.println("JOTAIN");
-        System.out.println(reader.getJSON2(a,b,b,b,b,b,b,b,c));
-        System.out.println(reader.getJSON2(b,a,b,b,b,b,b,b,c));
+
         Double carton = Double.valueOf(reader.getJSON2(b,a,b,b,b,b,b,b,c));
-        System.out.println(reader.getJSON2(b,a,b,b,b,b,b,b,c));
+
         Double electronic = Double.valueOf(reader.getJSON2(b,b,a,b,b,b,b,b,c));
         Double glass = Double.valueOf(reader.getJSON2(b,b,b,a,b,b,b,b,c));
         Double hazardous = Double.valueOf(reader.getJSON2(b,b,b,b,a,b,b,b,c));

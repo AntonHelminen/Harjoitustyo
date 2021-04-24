@@ -45,8 +45,7 @@ public class ViewDataFragment extends Fragment {
         waste_type = (TextView) getView().findViewById(R.id.Waste_Type);
         C02_amount = (TextView) getView().findViewById(R.id.C02_Amount);
         units = (TextView) getView().findViewById(R.id.Units);
-
-        if (person.getC02() == null) {
+        if (person.getC02().isEmpty()) {
             message.setText("You have no data to see your footprint. Go add some in the Add Data - page.");
             message.setTextSize(15);
             info.setText("");
@@ -57,7 +56,7 @@ public class ViewDataFragment extends Fragment {
         else {
             int i = 0;
             ArrayList<Double> values = person.getC02();
-            //String worst_waste = data_manager.worst_waste_type(person);
+            String worst_waste = data_manager.worst_waste_type(person);
             while (i < person.getC02().size()-1) {
                 i ++;
             }
