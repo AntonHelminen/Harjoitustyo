@@ -9,7 +9,8 @@
     <item
         android:id="@+id/nav_profile"
         android:icon="@drawable/ic_profile"
-        android:title="@string/profile"></item>
+        android:title="@string/profile">
+    </item>
 
     <item
         android:id="@+id/nav_add_data"

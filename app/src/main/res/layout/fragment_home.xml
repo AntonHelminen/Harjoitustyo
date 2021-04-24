@@ -13,7 +13,9 @@
         android:layout_centerInParent="true"
         android:src="@drawable/image"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="16dp"></ImageView>
+        tools:layout_editor_absoluteY="16dp"
+        tools:ignore="ContentDescription">
+    </ImageView>
 
     <TextView
         android:id="@+id/Total_Usage"
@@ -24,8 +26,8 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:gravity="center"
-        android:text="In total people have used this app X times"
-        android:textSize="20dp"
+        android:text="@string/in_total_people_have_used_this_app_x_times"
+        android:textSize="20sp"
         android:textColor="@color/background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,8 +45,8 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:gravity="center"
-        android:text="you have used this app X times"
-        android:textSize="20dp"
+        android:text="@string/you_have_used_this_app_x_times"
+        android:textSize="20sp"
         android:textColor="@color/background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -57,9 +59,9 @@
         android:layout_width="293dp"
         android:layout_height="83dp"
         android:gravity="center"
-        android:text="THANK YOU FOR YOUR SUPPORT"
+        android:text="@string/thank_you_for_your_support"
         android:textColor="@color/white"
-        android:textSize="30dp"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
         app:layout_constraintStart_toStartOf="@+id/imageView"
