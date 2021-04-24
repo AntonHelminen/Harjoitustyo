@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         User user = User.getInstance();
         View hviev = navigationView.getHeaderView(0);
         TextView nav = (TextView) hviev.findViewById(R.id.textView);
-        nav.setText(user.getPerson().getUsername());
+        nav.setText(user.getPerson().getName());
 
         //Setting fragment at start based on previous visit
         Person person = user.getPerson();
@@ -115,10 +115,7 @@ public class MainActivity extends AppCompatActivity {
                     user.setPerson(person);
                 }
                 else if (id == R.id.nav_logout) {
-                    //Replacing original file data with user's data + updating times app has been used
-                    person = user.getPerson();
-                    person.setTimes_used(person.getTimes_used()+1);
-                    user.setPerson(person);
+                    //Replacing original file data with user's data
 
                     person_manager.removePerson(user.getPerson().getPassword(), user.getPerson().getUsername());
                     person_manager.addPerson(user.getPerson());

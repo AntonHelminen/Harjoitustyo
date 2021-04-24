@@ -69,6 +69,9 @@ public class LoginActivity extends AppCompatActivity {
                 Toast.makeText(this, "Welcome back, "  + user.getPerson().getName() + "!", Toast.LENGTH_LONG).show();
                 startActivity(intent);
             }
+            Person person = user.getPerson();
+            person.setTimes_used(person.getTimes_used()+1);
+            user.setPerson(person);
 
         }
         else {
