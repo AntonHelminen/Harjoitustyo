@@ -44,6 +44,8 @@
     <string name="in_total_people_have_used_this_app_x_times">In total people have used this app X times</string>
     <string name="you_have_used_this_app_x_times">you have used this app X times</string>
     <string name="thank_you_for_your_support">THANK YOU FOR YOUR SUPPORT</string>
+    <string name="choose_your_birthday_to_confirm_your_age">Choose your birthday to confirm your age</string>
+    <string name="show_log">Show Log</string>
     <string-array name="Choice">
         <item>never</item>
         <item>sometimes</item>
