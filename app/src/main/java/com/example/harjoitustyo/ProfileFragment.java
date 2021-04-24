@@ -22,8 +22,8 @@ public class ProfileFragment extends Fragment {
     CalendarView calender;
     String name, age;
     String formatedDate;
-    long dateInMillis, currentInMillis, ageInMillis;
-    int ageInt;
+    long dateInMillis, currentInMillis, ageInMillis, ageSetInMillis;
+    int ageInt, ageSet, yearSet;
     Calendar currentTime;
 
     @Nullable
@@ -56,7 +56,27 @@ public class ProfileFragment extends Fragment {
         currentInMillis = currentTime.getTimeInMillis();
         System.out.println("This is current date in milliseconds: " + currentInMillis);
 
+        ageSet = user.getPerson().getAge();
+        ageSetInMillis = ageSet * 365 * 24 * 60 * 60 * 1000;
+        calendar.setTimeInMillis(ageSetInMillis);
+        yearSet = calendar.get(Calendar.YEAR);
+
+        String date = "1/1/" + yearSet;
+        String[] parts = date.split("/");
+
+        int day = Integer.parseInt(parts[0]);
+        int month = Integer.parseInt(parts[1]);
+        int year = Integer.parseInt(parts[2]);
+
+        Calendar calendarSet = Calendar.getInstance();
+        calendarSet.set(Calendar.YEAR, year);
+        calendarSet.set(Calendar.MONTH, month);
+        calendarSet.set(Calendar.DAY_OF_MONTH, day);
+
+        long milliTime = calendarSet.getTimeInMillis();
+
         calender = (CalendarView) getView().findViewById(R.id.calendarView);
+        calender.setDate (milliTime, true, true);
         calender.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
