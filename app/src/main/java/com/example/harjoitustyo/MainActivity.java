@@ -37,10 +37,8 @@ public class MainActivity extends AppCompatActivity {
         /* Making DrawerLayout and NavigationView to create SideMenu */
         drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.open, R.string.close);
-
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
-
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         navigationView = (NavigationView) findViewById(R.id.navigation_menu);
@@ -117,16 +115,15 @@ public class MainActivity extends AppCompatActivity {
                     user.setPerson(person);
                 }
                 else if (id == R.id.nav_logout) {
-                    User user = User.getInstance();
-                    for(String key: person_manager.getPeopleMap().keySet()) {
-                        System.out.println(person_manager.getPeopleMap().get(key).getName());
-                    }
+                    //Replacing original file data with user's data + updating times app has been used
+                    person = user.getPerson();
+                    person.setTimes_used(person.getTimes_used()+1);
+                    user.setPerson(person);
+
                     person_manager.removePerson(user.getPerson().getPassword(), user.getPerson().getUsername());
                     person_manager.addPerson(user.getPerson());
                     person_manager.writeFile(context);
-                    for(String key: person_manager.getPeopleMap().keySet()) {
-                        System.out.println(person_manager.getPeopleMap().get(key).getBioWaste());
-                    }
+
                     logout();
                     resume = false;
                     finish();

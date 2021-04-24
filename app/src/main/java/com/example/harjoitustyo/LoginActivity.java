@@ -19,6 +19,7 @@ public class LoginActivity extends AppCompatActivity {
     private Button Bypass;
     Login_Manager login_manager = Login_Manager.getInstance();
     Person_manager person_manager = Person_manager.getInstance();
+    User user = User.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,8 +61,15 @@ public class LoginActivity extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity.class);
         Boolean worked = login_manager.login(password.getText().toString(), username.getText().toString());
         if (worked) {
-            Toast.makeText(this, "Welcome!", Toast.LENGTH_LONG).show();
-            startActivity(intent);
+            if (user.getPerson().getTimes_used() == 0) {
+                Toast.makeText(this, "Welcome, " + user.getPerson().getName() + "!", Toast.LENGTH_LONG).show();
+                startActivity(intent);
+            }
+            else {
+                Toast.makeText(this, "Welcome back, "  + user.getPerson().getName() + "!", Toast.LENGTH_LONG).show();
+                startActivity(intent);
+            }
+
         }
         else {
             Toast.makeText(this, "Wrong username or password. Sign up if you haven't created an account yet.", Toast.LENGTH_LONG).show();

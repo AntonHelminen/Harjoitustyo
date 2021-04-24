@@ -103,6 +103,7 @@ public class Data_Manager {
     //Reads a person's waste recycling habits and calculates the weight of every habit.
     public HashMap<String, Double> carbon_trace_per_waste_type(Person person) {
         Double[] info = evaluator();
+        System.out.println("0: " + info[1] + " 1: " + info[2] + " 2: " + info [3]);
         String habit;
         int value;
         int i = 0;
@@ -159,6 +160,11 @@ public class Data_Manager {
     public int[] sorting_by_age() {
         int[] results = new int[5];
         int value;
+        int i0 = 0;
+        int i1 = 0;
+        int i2 = 0;
+        int i3 = 0;
+        int i4 = 0;
         System.out.println("Amount of people: " + people.size());
         for (String key : people.keySet()) {
             System.out.println("Reading a person");
@@ -169,25 +175,36 @@ public class Data_Manager {
             System.out.println("\n\n\nAge: " + age);
             if (age <= 18) {
                 results[0] = results[0] + value;
+                i0 ++;
             }
             else if (age > 18 && age <= 35) {
                 results[1] = results[1] + value;
+                i1 ++;
             }
             else if (age > 35 && age <= 50) {
                 results[2] = results[2] + value;
+                i2 ++;
             }
             else if (age > 50 && age <= 65) {
                 results[3] = results[3] + value;
+                i3 ++;
             }
             else if (age > 65) {
                 results[4] = results[4] + value;
+                i4 ++;
             }
         }
+        results[0] = results[0]/i0;
+        results[1] = results[1]/i1;
+        results[2] = results[2]/i2;
+        results[3] = results[3]/i3;
+        results[4] = results[4]/i4;
         System.out.println("indeksi 0: " + results[0]);
         System.out.println("indeksi 1: " + results[1]);
         System.out.println("indeksi 2: " + results[2]);
         System.out.println("indeksi 3: " + results[3]);
         System.out.println("indeksi 4: " + results[4]);
+
         return results;
     }
     //Used for turning a person's recycling habits into a simple Integer value.
@@ -202,6 +219,14 @@ public class Data_Manager {
             }
         }
         System.out.println("Value of person's habits: " + value);
+        return value;
+    }
+    public int totalUses() {
+        int value = 0;
+        for (String key : people.keySet()) {
+            Person person = people.get(key);
+            value += person.getTimes_used();
+        }
         return value;
     }
 }

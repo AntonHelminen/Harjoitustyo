@@ -24,7 +24,9 @@ public class Person {
     private String paper;
     private String plastic;
     private String estimate;
+    //Miscellaneous stats
     private String fragment;
+    private int times_used = 0;
 
     public Person(String username, String password, String name, int age) {
         this.username = username;
@@ -81,6 +83,9 @@ public class Person {
     public String getFragment() {
         return fragment;
     }
+    public int getTimes_used() {
+        return times_used;
+    }
     //Setters()
     public void setUsername(String username) {
         this.username = username;
@@ -129,6 +134,9 @@ public class Person {
     }
     public void setFragment(String s) {
         fragment = s;
+    }
+    public void setTimes_used(int i) {
+        times_used = i;
     }
     //Data resetter for C02
     public void reset() {
