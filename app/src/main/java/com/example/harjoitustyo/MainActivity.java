@@ -67,6 +67,9 @@ public class MainActivity extends AppCompatActivity {
             else if (previousfragment.equals("Help")){
                 fragment = new HelpFragment();
             }
+            else if (previousfragment.equals("Profile")) {
+                fragment = new ProfileFragment();
+            }
             else {
                 fragment = new HomeFragment();
             }
@@ -86,9 +89,9 @@ public class MainActivity extends AppCompatActivity {
                 int id = item.getItemId();
                 if (id == R.id.nav_home) {
                     fragment = new HomeFragment();
-                     person = user.getPerson();
-                     person.setFragment("Home");
-                     user.setPerson(person);
+                    person = user.getPerson();
+                    person.setFragment("Home");
+                    user.setPerson(person);
                 }
                 else if (id == R.id.nav_profile) {
                     fragment = new ProfileFragment();
