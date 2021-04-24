@@ -159,6 +159,11 @@ public class Data_Manager {
     //Calculates users' recycling habits per age-group. Returns an array of results.
     public Double[] sorting_by_age() {
         Double[] results = new Double[5];
+        int a = 0;
+        while (a < results.length) {
+            results[a] = 0.0;
+            a++;
+        }
         Double value;
         int i0 = 0;
         int i1 = 0;
@@ -174,8 +179,10 @@ public class Data_Manager {
             int age = person.getAge();
             System.out.println("\n\n\nAge: " + age);
             if (age <= 18) {
+                System.out.println("Bug1");
                 results[0] = results[0] + value;
                 i0 ++;
+                System.out.println("Bug2");
             }
             else if (age > 18 && age <= 35) {
                 results[1] = results[1] + value;
