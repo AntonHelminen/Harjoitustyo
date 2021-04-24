@@ -194,35 +194,35 @@ public class Data_Manager {
                 i4 ++;
             }
         }
-        if (i0 != 0) {
+        if (i0 == 0) {
             results[0] = 0.0;
         }
         else {
             results[0] = results[0]/i0;
         }
 
-        if (i1 != 0) {
+        if (i1 == 0) {
             results[1] = 0.0;
         }
         else {
             results[1] = results[1]/i1;
         }
 
-        if (i2 != 0) {
+        if (i2 == 0) {
             results[2] = 0.0;
         }
         else {
             results[2] = results[2]/i2;
         }
 
-        if (i3 != 0) {
+        if (i3 == 0) {
             results[3] = 0.0;
         }
         else {
             results[3] = results[3]/i3;
         }
 
-        if (i4 != 0) {
+        if (i4 == 0) {
             results[4] = 0.0;
         }
         else {
