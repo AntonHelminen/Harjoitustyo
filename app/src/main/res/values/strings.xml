@@ -46,6 +46,7 @@
     <string name="thank_you_for_your_support">THANK YOU FOR YOUR SUPPORT</string>
     <string name="choose_your_birthday_to_confirm_your_age">Choose your birthday to confirm your age</string>
     <string name="show_log">Show Log</string>
+    <string name="hide_log">Hide Log</string>
     <string-array name="Choice">
         <item>never</item>
         <item>sometimes</item>
