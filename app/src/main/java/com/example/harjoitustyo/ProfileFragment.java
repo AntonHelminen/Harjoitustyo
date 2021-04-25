@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.TextView;
 
@@ -17,12 +18,15 @@ import java.util.Date;
 
 public class ProfileFragment extends Fragment {
 
+    Button button;
     Person updatedUser;
     TextView textName;
     TextView textAge;
+    TextView textLog;
     CalendarView calender;
     String name, age;
     String formatedDate;
+    String information;
     long dateInMillis, currentInMillis, ageInMillis, ageSetInMillis;
     int ageInt, ageSet, yearSet;
     Calendar currentTime;
@@ -31,7 +35,21 @@ public class ProfileFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        return inflater.inflate(R.layout.fragment_profile, container, false);
+        View view = inflater.inflate(R.layout.fragment_profile, container, false);
+        button = (Button) view.findViewById(R.id.button_log);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                /* Showing user's data*/
+                User user = User.getInstance();
+                Person_manager person_manager = Person_manager.getInstance();
+                information = person_manager.personToString(user.getPerson());
+
+                textLog = (TextView) getView().findViewById(R.id.textLog);
+                textLog.setText(information);
+            }
+        });
+        return view;
     }
 
     @Override
@@ -63,7 +81,7 @@ public class ProfileFragment extends Fragment {
         System.out.println("ageSet" + ageSet);
         ageSetInMillis = ageSet * 365 * 24 * 60 * 60 * 1000L;
         System.out.println("ageSetInMillis: " + ageSetInMillis);
-        calendar.setTimeInMillis(currentInMillis-ageSetInMillis);
+        calendar.setTimeInMillis(currentInMillis - ageSetInMillis);
         yearSet = calendar.get(Calendar.YEAR);
         System.out.println("yearSet: " + yearSet);
         String date = "1/0/" + yearSet;
@@ -81,7 +99,7 @@ public class ProfileFragment extends Fragment {
         long milliTime = calendarSet.getTimeInMillis();
 
         calender = (CalendarView) getView().findViewById(R.id.calendarView);
-        calender.setDate (milliTime, true, true);
+        calender.setDate(milliTime, true, true);
         calender.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
