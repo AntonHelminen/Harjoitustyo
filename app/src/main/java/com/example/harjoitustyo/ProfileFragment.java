@@ -45,6 +45,7 @@ public class ProfileFragment extends Fragment {
 
                 User user = User.getInstance();
                 Person_manager person_manager = Person_manager.getInstance();
+
                 /* Showing user's data*/
                 if (textLog.length() == 0)   {
                     information = person_manager.personToString(user.getPerson());

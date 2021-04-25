@@ -102,7 +102,7 @@ public class AddDataFragment extends Fragment implements AdapterView.OnItemSelec
 
                 API_reader api_reader = API_reader.getInstance();
 
-                /* Setting values */
+                /* Setting values for menus*/
                 api_reader.setBioWaste(spinner.getSelectedItem().toString());
                 api_reader.setCarton(spinner2.getSelectedItem().toString());
                 api_reader.setElectronic(spinner3.getSelectedItem().toString());

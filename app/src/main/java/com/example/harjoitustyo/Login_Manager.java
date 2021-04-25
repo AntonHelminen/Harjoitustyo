@@ -1,10 +1,5 @@
 package com.example.harjoitustyo;
 
-
-import android.content.Context;
-import android.content.Intent;
-import android.widget.Toast;
-
 import java.util.regex.Pattern;
 /*Controls login and signup.
 Is Singleton*/

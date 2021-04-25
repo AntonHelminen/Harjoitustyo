@@ -23,10 +23,12 @@ public class BarChartActivity extends AppCompatActivity {
         setContentView(R.layout.activity_bar_chart);
         User user = User.getInstance();
 
+        /* Creating BarChart for user's CO2 values */
         BarChart barChart = (BarChart) findViewById(R.id.barChart);
         if (user.getPerson().getC02().size() == 0)   {
             Toast.makeText(this, "Add data first!", Toast.LENGTH_SHORT).show();
         }
+        /* Adding data */
         ArrayList<BarEntry> evaluations = new ArrayList<>();
         for (int i = 1; i <= user.getPerson().getC02().size(); i++) {
             evaluations.add(new BarEntry(i, Math.round(user.getPerson().getC02().get(i-1))));

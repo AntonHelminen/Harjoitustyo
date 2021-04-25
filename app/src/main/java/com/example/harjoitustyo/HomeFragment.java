@@ -83,6 +83,8 @@ public class HomeFragment extends Fragment {
         ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override
             public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
+
+                /* Setting and getting ratings */
                 Person person = user.getPerson();
                 userRate = "Your rating: " + rating + "/5.0";
                 userRating.setText(userRate);
@@ -91,7 +93,6 @@ public class HomeFragment extends Fragment {
                 person_manager.removePerson(user.getPerson().getPassword(), user.getPerson().getUsername());
                 person_manager.addPerson(person);
 
-                /* Setting and getting ratings */
                 for (String key: people.keySet())   {
                     Person person2 = people.get(key);
                     if (!(person2.getRating() == 0.0))   {

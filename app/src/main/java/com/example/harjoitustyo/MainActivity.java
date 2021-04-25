@@ -13,12 +13,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
 
-import java.sql.SQLOutput;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -80,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction transaction = manager.beginTransaction();
         transaction.replace(R.id.fragmentWindow, fragment);
         transaction.commit();
-        //Setting frgament at start based on previous visit
+        //Setting fragment at start based on previous visit
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {

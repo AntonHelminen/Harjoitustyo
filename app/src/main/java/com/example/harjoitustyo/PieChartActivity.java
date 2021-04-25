@@ -21,9 +21,11 @@ public class PieChartActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pie_chart);
 
+        /* Creating PieChart for sorting by age */
         PieChart pieChart = (PieChart) findViewById(R.id.pieChart);
         Double[] data = data_manager.sorting_by_age();
 
+        /* Adding data */
         ArrayList<PieEntry> age_groups = new ArrayList<>();
         age_groups.add(new PieEntry(Math.round(data[0]), "0-18"));
         age_groups.add(new PieEntry(Math.round(data[1]), "18-35"));

@@ -63,12 +63,12 @@ public class LoginActivity extends AppCompatActivity {
         if (worked) {
             if (user.getPerson().getTimes_used() == 0) {
                 Toast.makeText(this, "Welcome, " + user.getPerson().getName() + "!", Toast.LENGTH_LONG).show();
-                startActivity(intent);
             }
             else {
                 Toast.makeText(this, "Welcome back, "  + user.getPerson().getName() + "!", Toast.LENGTH_LONG).show();
-                startActivity(intent);
             }
+            startActivity(intent);
+
             Person person = user.getPerson();
             person.setTimes_used(person.getTimes_used()+1);
             user.setPerson(person);
