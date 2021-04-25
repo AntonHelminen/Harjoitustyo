@@ -75,7 +75,8 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView22"
-        app:layout_constraintVertical_bias="0.897" />
+        app:layout_constraintVertical_bias="0.897"
+        android:progressTint="@color/yellow" />
 
     <TextView
         android:id="@+id/textView2"

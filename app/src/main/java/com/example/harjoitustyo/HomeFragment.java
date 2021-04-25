@@ -42,6 +42,9 @@ public class HomeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        ratingBar = (RatingBar) getView().findViewById(R.id.ratingBar);
+
         //Textfields
         personal_use = (TextView) getView().findViewById(R.id.Personal_Usage);
         total_use = (TextView) getView().findViewById(R.id.Total_Usage);
@@ -72,6 +75,8 @@ public class HomeFragment extends Fragment {
             averageRate = "Average rating: " + average + "/5.0";
             userRating.setText(userRate);
             averageRating.setText(averageRate);
+
+            ratingBar.setRating(user.getPerson().getRating());
         }
 
         ratingBar = (RatingBar) getView().findViewById(R.id.ratingBar);
