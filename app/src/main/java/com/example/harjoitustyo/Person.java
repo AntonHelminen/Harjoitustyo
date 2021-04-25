@@ -27,6 +27,7 @@ public class Person {
     //Miscellaneous stats
     private String fragment;
     private int times_used = 0;
+    private float rating;
 
     public Person(String username, String password, String name, int age) {
         this.username = username;
@@ -86,6 +87,7 @@ public class Person {
     public int getTimes_used() {
         return times_used;
     }
+    public float getRating() { return rating; }
     //Setters()
     public void setUsername(String username) {
         this.username = username;
@@ -138,6 +140,7 @@ public class Person {
     public void setTimes_used(int i) {
         times_used = i;
     }
+    public void setRating(float f) { rating = f; }
     //Data resetter for C02
     public void reset() {
         C02.clear();

@@ -85,7 +85,7 @@ public class Person_manager {
                     line2 = "null";
                 }
                 String line3 = ";" + person.getBioWaste() + ";" + person.getCarton() + ";" + person.getElectronic() + ";" + person.getGlass() + ";" + person.getHazardous() + ";" + person.getMetal() + ";" + person.getPaper() + ";" + person.getPlastic() + ";" + person.getEstimate();
-                String line4 = ";" + person.getFragment() + ";" + person.getTimes_used() + "\n";
+                String line4 = ";" + person.getFragment() + ";" + person.getTimes_used() + ";" + person.getRating() + "\n";
                 osw.write(line);
                 osw.write(line2);
                 osw.write(line3);
@@ -116,6 +116,7 @@ public class Person_manager {
                 try {
                     person.setFragment(parts[14]);
                     person.setTimes_used(Integer.valueOf(parts[15]));
+                    person.setRating(Float.valueOf(parts[16]));
                 }
                 catch (IndexOutOfBoundsException e) {
                     e.printStackTrace();
