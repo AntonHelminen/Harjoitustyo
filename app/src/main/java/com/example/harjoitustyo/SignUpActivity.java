@@ -10,7 +10,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.regex.Pattern;
-
+/*Designed for creating a new account*/
 public class SignUpActivity extends AppCompatActivity {
     private EditText editName, editAge, editUsername, editPassword, editConfirm;
     Context context;
@@ -133,7 +133,7 @@ public class SignUpActivity extends AppCompatActivity {
             return true;
         }
     }
-
+    //Signup command
     public void SignUp(View v)  {
         Login_Manager loginManager = Login_Manager.getInstance();
         Person_manager person_manager = Person_manager.getInstance();

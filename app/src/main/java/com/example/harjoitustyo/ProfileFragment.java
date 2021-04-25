@@ -16,7 +16,7 @@ import androidx.fragment.app.Fragment;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-
+/*Displays profile info. Name, age and a log summary of all known data can be seen here.*/
 public class ProfileFragment extends Fragment {
 
     ToggleButton toggleButton;

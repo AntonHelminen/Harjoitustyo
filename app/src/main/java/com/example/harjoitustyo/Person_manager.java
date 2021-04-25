@@ -155,6 +155,7 @@ public class Person_manager {
             Log.e("IOException", "Error in input");
         }
     }
+    //Converts a person's data into an easily readable string.
     public String personToString(Person person) {
         String data = "(-Basic info-)" +
 

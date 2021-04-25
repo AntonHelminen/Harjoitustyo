@@ -13,7 +13,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import java.util.HashMap;
-
+/*HomeFragment is the first screen you see when logging in for the first time. It also displays
+* a rating system as well as all visit times.*/
 public class HomeFragment extends Fragment {
 
     int numberOfRatings = 0;

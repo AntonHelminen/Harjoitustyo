@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-
+//This is here just in case further expansions are needed. The class function was never really used.
 public class HelpFragment extends Fragment {
     @Nullable
     @Override

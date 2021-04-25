@@ -17,7 +17,7 @@ import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
 
-
+/*MainActivity. All fragment swaps are controlled here as well as logging off.*/
 public class MainActivity extends AppCompatActivity {
 
     NavigationView navigationView;

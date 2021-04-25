@@ -13,7 +13,7 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import java.util.ArrayList;
-
+/*Fragment for displaying some calculated data aswell as having links to two chartActivities.*/
 public class ViewDataFragment extends Fragment {
 
     TextView message;
@@ -30,14 +30,13 @@ public class ViewDataFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_view_data, container, false);
     }
-
+    //V
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
         API_reader api_reader = API_reader.getInstance();
-        //Some test stuff
-        //The real deal
+        //All visual operations
         message = (TextView) getView().findViewById(R.id.Display_Text);
         info = (TextView) getView().findViewById(R.id.Info_Box);
         waste_type = (TextView) getView().findViewById(R.id.Waste_Type);

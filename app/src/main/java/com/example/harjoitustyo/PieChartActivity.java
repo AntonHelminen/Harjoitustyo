@@ -13,7 +13,7 @@ import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
-
+/*Forms a pieChart from data given by all user's. */
 public class PieChartActivity extends AppCompatActivity {
     Data_Manager data_manager = Data_Manager.getInstance();
     @Override

@@ -14,7 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
-
+/*This fragment is for adding data for calculations and viewing data in the ViewDataFragment.*/
 public class AddDataFragment extends Fragment implements AdapterView.OnItemSelectedListener {
 
     Button button;

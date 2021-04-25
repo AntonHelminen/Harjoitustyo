@@ -9,7 +9,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-
+/*Controls login screen and all actions done there.*/
 public class LoginActivity extends AppCompatActivity {
 
     TextView username;
@@ -53,10 +53,12 @@ public class LoginActivity extends AppCompatActivity {
 
 
     }
+    //Sends user to SignUpActivity
     public void goToSignUp() {
         Intent intent = new Intent(this, SignUpActivity.class);
         startActivity(intent);
     }
+    //Login command. Accepts login if person's password and username match.
     public void Login() {
         Intent intent = new Intent(this, MainActivity.class);
         Boolean worked = login_manager.login(password.getText().toString(), username.getText().toString());

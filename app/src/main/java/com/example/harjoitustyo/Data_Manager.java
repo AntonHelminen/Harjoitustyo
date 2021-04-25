@@ -35,7 +35,7 @@ public class Data_Manager {
         }
         return result;
     }
-    //Finds the most commonly sorted waste type
+    //Finds the most commonly sorted waste type. Wasn't used, but is here anyway.
     public String most_sorted_waste() {
         String result = "";
         int most_sorted_value = 0;
@@ -364,6 +364,7 @@ public class Data_Manager {
         System.out.println("Value of person's habits: " + value);
         return value;
     }
+    //Returns the value of the times this application has been used in total by all users.
     public int totalUses() {
         int value = 0;
         for (String key : people.keySet()) {
