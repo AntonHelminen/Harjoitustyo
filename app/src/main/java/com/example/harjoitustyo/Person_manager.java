@@ -156,6 +156,8 @@ public class Person_manager {
     }
     public String personToString(Person person) {
         String data = "(-Basic info-)" +
+
+                "\n\n[This file is only changed after logging out first.]\n" +
                 "\nUsername: " + person.getUsername() +
                 "\nPassword: " + person.getPassword() +
 
