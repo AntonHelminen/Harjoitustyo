@@ -89,6 +89,8 @@ public class ProfileFragment extends Fragment {
         System.out.println("ageSet" + ageSet);
         ageSetInMillis = ageSet * 365 * 24 * 60 * 60 * 1000L;
         System.out.println("ageSetInMillis: " + ageSetInMillis);
+
+        /* Only works for people who are younger than 51 years because of Unix time */
         calendar.setTimeInMillis(currentInMillis - ageSetInMillis);
         yearSet = calendar.get(Calendar.YEAR);
         System.out.println("yearSet: " + yearSet);
