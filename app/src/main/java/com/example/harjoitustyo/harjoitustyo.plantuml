@@ -1,0 +1,345 @@
+@startuml
+
+title __HARJOITUSTYO's Class Diagram__\n
+
+  namespace com.example.harjoitustyo {
+    class com.example.harjoitustyo.API_reader {
+        {static} - api_reader : API_reader
+        - bioWaste : String
+        - carton : String
+        - electronic : String
+        - estimate : String
+        - glass : String
+        - hazardous : String
+        - metal : String
+        - paper : String
+        - plastic : String
+        - result : double
+        + calculate()
+        {static} + getInstance()
+        + getJSON()
+        + getJSON2()
+        + getResult()
+        + setBioWaste()
+        + setCarton()
+        + setElectronic()
+        + setEstimate()
+        + setGlass()
+        + setHazardous()
+        + setMetal()
+        + setPaper()
+        + setPlastic()
+    }
+  }
+  
+
+  namespace com.example.harjoitustyo {
+    class com.example.harjoitustyo.AddDataFragment {
+        ~ button : Button
+        ~ scrollview : ScrollView
+        ~ scrollview2 : ScrollView
+        ~ scrollview3 : ScrollView
+        ~ scrollview4 : ScrollView
+        ~ scrollview5 : ScrollView
+        ~ scrollview6 : ScrollView
+        ~ scrollview7 : ScrollView
+        ~ scrollview8 : ScrollView
+        ~ scrollview9 : ScrollView
+        ~ spinner : Spinner
+        ~ spinner2 : Spinner
+        ~ spinner3 : Spinner
+        ~ spinner4 : Spinner
+        ~ spinner5 : Spinner
+        ~ spinner6 : Spinner
+        ~ spinner7 : Spinner
+        ~ spinner8 : Spinner
+        ~ spinner9 : Spinner
+        + onCreateView()
+        + onItemSelected()
+        + onNothingSelected()
+        + onViewCreated()
+    }
+  }
+  
+
+  namespace com.example.harjoitustyo {
+    class com.example.harjoitustyo.BarChartActivity {
+        + GoBack()
+        # onCreate()
+    }
+  }
+  
+
+  namespace com.example.harjoitustyo {
+    class com.example.harjoitustyo.Data_Manager {
+        ~ habits : HashMap<String, String>
+        ~ people : HashMap<String, Person>
+        {static} - data_Manager : Data_Manager
+        + carbon_trace_per_waste_type()
+        + converter_for_C02_weight()
+        + converter_for_recycling_amount()
+        + evaluator()
+        {static} + getInstance()
+        + least_sorted_waste()
+        + most_sorted_waste()
+        + person_habits_to_value()
+        + sorting_by_age()
+        + totalUses()
+        + worst_waste_type()
+    }
+  }
+  
+
+  namespace com.example.harjoitustyo {
+    class com.example.harjoitustyo.HelpFragment {
+        + onCreateView()
+        + onViewCreated()
+    }
+  }
+  
+
+  namespace com.example.harjoitustyo {
+    class com.example.harjoitustyo.HomeFragment {
+        ~ personal_use : TextView
+        ~ total_use : TextView
+        + onCreateView()
+        + onViewCreated()
+    }
+  }
+  
+
+  namespace com.example.harjoitustyo {
+    class com.example.harjoitustyo.LoginActivity {
+        ~ password : TextView
+        ~ username : TextView
+        - Bypass : Button
+        - LogIn : Button
+        - SignUp : Button
+        + Login()
+        + goToSignUp()
+        # onCreate()
+    }
+  }
+  
+
+  namespace com.example.harjoitustyo {
+    class com.example.harjoitustyo.Login_Manager {
+        {static} - login_checker : Login_Manager
+        + createPerson()
+        + find_person()
+        {static} + getInstance()
+        + login()
+    }
+  }
+  
+
+  namespace com.example.harjoitustyo {
+    class com.example.harjoitustyo.MainActivity {
+        ~ fragment : Fragment
+        ~ navigationView : NavigationView
+        - actionBarDrawerToggle : ActionBarDrawerToggle
+        - drawerLayout : DrawerLayout
+        + logout()
+        + onOptionsItemSelected()
+        # onCreate()
+    }
+  }
+  
+
+  namespace com.example.harjoitustyo {
+    class com.example.harjoitustyo.NavigationHeader {
+        ~ text : TextView
+        # onCreate()
+    }
+  }
+  
+
+  namespace com.example.harjoitustyo {
+    class com.example.harjoitustyo.Person {
+        - C02 : ArrayList<Double>
+        - age : int
+        - bioWaste : String
+        - carton : String
+        - electronic : String
+        - estimate : String
+        - fragment : String
+        - glass : String
+        - habits : HashMap<String, String>
+        - hazardous : String
+        - home_town : String
+        - metal : String
+        - name : String
+        - paper : String
+        - password : String
+        - plastic : String
+        - times_used : int
+        - username : String
+        + Person()
+        + getAge()
+        + getBioWaste()
+        + getC02()
+        + getCarton()
+        + getElectronic()
+        + getEstimate()
+        + getFragment()
+        + getGlass()
+        + getHabits()
+        + getHazardous()
+        + getHome_town()
+        + getMetal()
+        + getName()
+        + getPaper()
+        + getPassword()
+        + getPlastic()
+        + getTimes_used()
+        + getUsername()
+        + reset()
+        + setAge()
+        + setBioWaste()
+        + setC02()
+        + setCarton()
+        + setElectronic()
+        + setEstimate()
+        + setFragment()
+        + setGlass()
+        + setHabits()
+        + setHazardous()
+        + setHome_town()
+        + setMetal()
+        + setName()
+        + setPaper()
+        + setPassword()
+        + setPlastic()
+        + setTimes_used()
+        + setUsername()
+    }
+  }
+  
+
+  namespace com.example.harjoitustyo {
+    class com.example.harjoitustyo.Person_manager {
+        {static} - manager : Person_manager
+        - people : HashMap<String, Person>
+        + addPerson()
+        + findPerson()
+        {static} + getInstance()
+        + getPeopleMap()
+        + getPerson()
+        + personToString()
+        + readFile()
+        + removePerson()
+        + writeFile()
+    }
+  }
+  
+
+  namespace com.example.harjoitustyo {
+    class com.example.harjoitustyo.PieChartActivity {
+        + GoBack()
+        # onCreate()
+    }
+  }
+  
+
+  namespace com.example.harjoitustyo {
+    class com.example.harjoitustyo.ProfileFragment {
+        ~ age : String
+        ~ ageInMillis : long
+        ~ ageInt : int
+        ~ ageSet : int
+        ~ ageSetInMillis : long
+        ~ calender : CalendarView
+        ~ currentInMillis : long
+        ~ currentTime : Calendar
+        ~ dateInMillis : long
+        ~ formatedDate : String
+        ~ name : String
+        ~ textAge : TextView
+        ~ textName : TextView
+        ~ yearSet : int
+        + onCreateView()
+        + onViewCreated()
+    }
+  }
+  
+
+  namespace com.example.harjoitustyo {
+    class com.example.harjoitustyo.SignUpActivity {
+        ~ context : Context
+        - editAge : EditText
+        - editConfirm : EditText
+        - editName : EditText
+        - editPassword : EditText
+        - editUsername : EditText
+        + GoBack()
+        + SignUp()
+        # onCreate()
+        - validateAge()
+        - validateName()
+        - validatePassword()
+        - validateUsername()
+    }
+  }
+  
+
+  namespace com.example.harjoitustyo {
+    class com.example.harjoitustyo.User {
+        {static} - user : User
+        {static} + getInstance()
+        + getPerson()
+        + setPerson()
+    }
+  }
+  
+
+  namespace com.example.harjoitustyo {
+    class com.example.harjoitustyo.ViewDataFragment {
+        ~ C02_amount : TextView
+        ~ analysis : TextView
+        ~ info : TextView
+        ~ message : TextView
+        ~ units : TextView
+        ~ waste_type : TextView
+        + onCreateView()
+        + onViewCreated()
+    }
+  }
+  
+
+  com.example.harjoitustyo.API_reader o-- com.example.harjoitustyo.User : user
+  com.example.harjoitustyo.AddDataFragment .up.|> android.widget.AdapterView.OnItemSelectedListener
+  com.example.harjoitustyo.AddDataFragment -up-|> androidx.fragment.app.Fragment
+  com.example.harjoitustyo.BarChartActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.harjoitustyo.Data_Manager o-- com.example.harjoitustyo.Person_manager : person_manager
+  com.example.harjoitustyo.HelpFragment -up-|> androidx.fragment.app.Fragment
+  com.example.harjoitustyo.HomeFragment -up-|> androidx.fragment.app.Fragment
+  com.example.harjoitustyo.HomeFragment o-- com.example.harjoitustyo.Data_Manager : data_manager
+  com.example.harjoitustyo.HomeFragment o-- com.example.harjoitustyo.User : user
+  com.example.harjoitustyo.LoginActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.harjoitustyo.LoginActivity o-- com.example.harjoitustyo.Login_Manager : login_manager
+  com.example.harjoitustyo.LoginActivity o-- com.example.harjoitustyo.Person_manager : person_manager
+  com.example.harjoitustyo.LoginActivity o-- com.example.harjoitustyo.User : user
+  com.example.harjoitustyo.Login_Manager o-- com.example.harjoitustyo.Person : person
+  com.example.harjoitustyo.Login_Manager o-- com.example.harjoitustyo.Person_manager : person_manager
+  com.example.harjoitustyo.Login_Manager o-- com.example.harjoitustyo.User : user
+  com.example.harjoitustyo.MainActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.harjoitustyo.NavigationHeader -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.harjoitustyo.PieChartActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.harjoitustyo.PieChartActivity o-- com.example.harjoitustyo.Data_Manager : data_manager
+  com.example.harjoitustyo.ProfileFragment -up-|> androidx.fragment.app.Fragment
+  com.example.harjoitustyo.SignUpActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.harjoitustyo.User o-- com.example.harjoitustyo.Person : person
+  com.example.harjoitustyo.ViewDataFragment -up-|> androidx.fragment.app.Fragment
+  com.example.harjoitustyo.ViewDataFragment o-- com.example.harjoitustyo.Data_Manager : data_manager
+  com.example.harjoitustyo.ViewDataFragment o-- com.example.harjoitustyo.Person : person
+  com.example.harjoitustyo.ViewDataFragment o-- com.example.harjoitustyo.User : user
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml
