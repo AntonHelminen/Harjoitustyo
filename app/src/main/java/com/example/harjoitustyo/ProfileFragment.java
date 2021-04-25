@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -18,7 +19,7 @@ import java.util.Date;
 
 public class ProfileFragment extends Fragment {
 
-    Button button;
+    ToggleButton toggleButton;
     Person updatedUser;
     TextView textName;
     TextView textAge;
@@ -36,17 +37,23 @@ public class ProfileFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
-        button = (Button) view.findViewById(R.id.button_log);
-        button.setOnClickListener(new View.OnClickListener() {
+        textLog = (TextView) view.findViewById(R.id.textLog);
+        toggleButton = (ToggleButton) view.findViewById(R.id.toggleButton);
+        toggleButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /* Showing user's data*/
+
                 User user = User.getInstance();
                 Person_manager person_manager = Person_manager.getInstance();
-                information = person_manager.personToString(user.getPerson());
-
-                textLog = (TextView) getView().findViewById(R.id.textLog);
-                textLog.setText(information);
+                /* Showing user's data*/
+                if (textLog.length() == 0)   {
+                    information = person_manager.personToString(user.getPerson());
+                    textLog.setText(information);
+                }
+                /* Hiding user's data*/
+                else {
+                    textLog.setText("");
+                }
             }
         });
         return view;
