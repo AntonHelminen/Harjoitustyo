@@ -48,6 +48,7 @@
     <string name="show_log">Show Log</string>
     <string name="hide_log">Hide Log</string>
     <string name="please_rate_this_app">Please rate this app:</string>
+    <string name="recycling_app">RECYCLING APP</string>
     <string-array name="Choice">
         <item>never</item>
         <item>sometimes</item>

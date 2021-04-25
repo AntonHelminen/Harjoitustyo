@@ -11,11 +11,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_centerInParent="true"
+        android:background="@color/lol"
         android:src="@drawable/image"
         tools:ignore="ContentDescription"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp">
-    </ImageView>
+        tools:layout_editor_absoluteY="0dp"></ImageView>
 
     <TextView
         android:id="@+id/Total_Usage"
