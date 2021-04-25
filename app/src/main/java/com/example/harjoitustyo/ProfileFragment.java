@@ -17,6 +17,7 @@ import java.util.Date;
 
 public class ProfileFragment extends Fragment {
 
+    Person updatedUser;
     TextView textName;
     TextView textAge;
     CalendarView calender;
@@ -51,22 +52,22 @@ public class ProfileFragment extends Fragment {
 
         final Calendar calendar = Calendar.getInstance();
 
+        /* Getting current time in milliseconds */
         currentTime = Calendar.getInstance();
         currentTime.getTime();
         currentInMillis = currentTime.getTimeInMillis();
         System.out.println("This is current date in milliseconds: " + currentInMillis);
 
+        /* Getting user's age and setting calendar view near to correct year */
         ageSet = user.getPerson().getAge();
         System.out.println("ageSet" + ageSet);
         ageSetInMillis = ageSet * 365 * 24 * 60 * 60 * 1000L;
         System.out.println("ageSetInMillis: " + ageSetInMillis);
-        calendar.setTimeInMillis(ageSetInMillis);
+        calendar.setTimeInMillis(currentInMillis-ageSetInMillis);
         yearSet = calendar.get(Calendar.YEAR);
         System.out.println("yearSet: " + yearSet);
-        String date = "1/1/" + yearSet;
+        String date = "1/0/" + yearSet;
         String[] parts = date.split("/");
-
-        // TODO Get right year!
 
         int day = Integer.parseInt(parts[0]);
         int month = Integer.parseInt(parts[1]);
@@ -84,6 +85,7 @@ public class ProfileFragment extends Fragment {
         calender.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
+                /* Getting selected date and calculating user's age */
                 calendar.set(year, month, dayOfMonth);
                 long selectedDateInMillis = calendar.getTimeInMillis();
                 formatedDate = sdf.format(selectedDateInMillis);
@@ -92,6 +94,17 @@ public class ProfileFragment extends Fragment {
                 ageInMillis = currentInMillis - dateInMillis;
                 ageInt = Math.round(Math.toIntExact(ageInMillis / 1000 / 60 / 60 / 24 / 365));
                 System.out.println("ageInt:" + ageInt);
+
+                updatedUser = user.getPerson();
+                updatedUser.setAge(ageInt);
+                user.setPerson(updatedUser);
+
+                Person_manager person_manager = Person_manager.getInstance();
+                person_manager.removePerson(user.getPerson().getPassword(), user.getPerson().getUsername());
+                person_manager.addPerson(user.getPerson());
+
+                age = "Age: " + ageInt;
+                textAge.setText(age);
             }
         });
 
