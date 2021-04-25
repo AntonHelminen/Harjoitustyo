@@ -49,6 +49,10 @@ public class SignUpActivity extends AppCompatActivity {
             editAge.setError("Field can't be empty!");
             return false;
         }
+        if (Integer.valueOf(ageInput) < 1) {
+            editAge.setError("Age must be at least 1!");
+            return false;
+        }
         else    {
             editAge.setError(null);
             return true;
